@@ -1,0 +1,57 @@
+name: pizzetas-local
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${LOCAL_PORT:-8080}:8080"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+  backend:
+    build: ./backend
+    volumes:
+      - media_data:/app/media
+    environment:
+      DATABASE_URL: postgresql+asyncpg://pizzetas:${POSTGRES_PASSWORD:?Ejecuta el script configure-local primero}@database:5432/pizzetas
+      APP_SECRET: ${APP_SECRET:?Configura APP_SECRET}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?Configura ADMIN_TOKEN}
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    depends_on:
+      database:
+        condition: service_healthy
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: pizzetas
+      POSTGRES_USER: pizzetas
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configura POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pizzetas -d pizzetas"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+volumes:
+  postgres_data:
+  media_data:

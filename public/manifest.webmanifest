@@ -1,0 +1,13 @@
+{
+  "id": "/",
+  "name": "Mi carta digital",
+  "short_name": "Mi carta",
+  "description": "Consulta la carta y prepara tu pedido para recoger.",
+  "lang": "es-MX",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f6f1",
+  "theme_color": "#bb3828",
+  "icons": [{"src":"/app-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
