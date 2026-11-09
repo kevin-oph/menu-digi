@@ -1,6 +1,13 @@
-# Pizzetas — V1 local
+# Pizzetas — Menú digital y demo
 
 Estado vigente: 9 de noviembre de 2026. Carta móvil modificable, API FastAPI y PostgreSQL funcionando en Docker. No publicado en Internet; sin pagos ni mensajes reales enviados.
+
+## Demo pública
+
+- Demo visual: https://kevin-oph.github.io/menu-digi/
+- Código: https://github.com/kevin-oph/menu-digi
+
+La demo gratuita permite explorar la carta y preparar un resumen simulado. No procesa pagos, no registra pedidos en el servidor y no permite administrar el negocio. La versión completa con API y PostgreSQL se ejecuta localmente con Docker.
 
 ## Abrir y revisar
 

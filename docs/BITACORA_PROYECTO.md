@@ -285,3 +285,10 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Workflow de GitHub Pages para pruebas/compilación/publicación. Proyecto Docker completo conserva compilación normal.
 - Repositorio local inicializado y archivos auditados para excluir .env, secretos, bases, respaldos y dependencias. Documentación del proyecto incorporada en docs.
 - La primera consulta del conector GitHub devolvió 404 por falta de acceso al repositorio; Git solicitó autenticación. No declarar subida ni demo pública completadas hasta verificar el resultado remoto.
+
+## 9 de noviembre de 2026 — Repositorio y publicación de demo
+
+- Credenciales locales de Git verificadas; proyecto subido a kevin-oph/menu-digi.
+- El usuario autorizó explícitamente hacer público el repositorio para GitHub Pages gratuito. Visibilidad pública verificada.
+- Pages habilitado con GitHub Actions; demo en https://kevin-oph.github.io/menu-digi/. Comprobar ejecución exitosa del workflow y carga pública antes de compartir como disponible.
+- Conservada separación entre demo visual sin backend y aplicación Docker completa. Claves locales, bases, respaldos y dependencias excluidos del repositorio.
