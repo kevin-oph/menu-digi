@@ -37,7 +37,7 @@ El panel solicita ADMIN_TOKEN del archivo privado .env. No se guarda persistente
 
 WhatsApp prepara texto para envío manual: el cliente adjunta su comprobante en el chat y el encargado verifica el abono. Abrir el chat no acredita envío ni pago. La confirmación también es una respuesta preparada que envía el encargado. No hay WhatsApp Business API ni recepción de comprobantes dentro de la app. Registrar una liquidación con tarjeta no procesa un cobro electrónico.
 
-Solo recoger. Transferencia mínima del 50% antes de preparar. Referencia habitual de 25–35 minutos desde confirmación; con cocina ocupada, 45–50 minutos u otro acuerdo. Se permite solicitar hora de hoy; no hay reserva automática de capacidad. Personalizaciones fuera del catálogo se consultan con una persona. Incluye postres y alcohol; excluye paquetes de pedida y cenas románticas.
+Solo recoger. Transferencia mínima del 50% antes de preparar. Referencia habitual de 25–35 minutos desde confirmación; con cocina ocupada, 45–50 minutos u otro acuerdo. Se permite solicitar hora de hoy; no hay reserva automática de capacidad. Personalizaciones fuera del catálogo se consultan con una persona. Incluye postres y únicamente cervezas en la sección de alcohol; excluye paquetes de pedida y cenas románticas.
 
 ## Errores, concurrencia y conservación
 

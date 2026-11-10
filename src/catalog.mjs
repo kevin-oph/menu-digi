@@ -7,7 +7,7 @@ export const categories = [
   { id: 'burgers', name: 'Burgers', subtitle: 'Con papas a la francesa y chilli popper.', icon: 'burger' },
   { id: 'postres', name: 'Postres', subtitle: 'Siempre queda espacio para algo dulce.', icon: 'cake' },
   { id: 'bebidas', name: 'Bebidas', subtitle: 'Algo fresco para tu pedido.', icon: 'cup' },
-  { id: 'bar', name: 'Bar', subtitle: 'Cervezas, vinos y cocteles.', icon: 'wine' },
+  { id: 'bar', name: 'Cervezas', subtitle: 'Elige tu cerveza favorita.', icon: 'cup' },
   { id: 'infantil', name: 'Peques', subtitle: 'Un menú a su medida.', icon: 'sparkles' },
 ];
 
@@ -105,6 +105,9 @@ add('mojito','bar','Mojito',110,'',{variants:variants([['Frutal',110],['Frapeado
 for(const [id,name,bottle,cup] of [['jack','Jack Daniels',900,90],['red','Red Label',850,95],['bacardi','Bacardí',700,70],['smirnof','Smirnof',700,70],['absolut','Absolut',950,95],['azul','Tequila Azul',700,70],['cuervo','Tequila José Cuervo',750,75],['don-julio','Don Julio 70',1500,150],['buchanans','Buchanans 12',1300,130],['torres','Torres 10',900,90],['1800','Tequila 1800',1100,95]]) add(id,'bar',name,cup,'Las botellas incluyen cuatro mezcladores.',{variants:variants([['Copa',cup],['Botella',bottle]]),page:13});
 for(const [id,name,description] of [['pizza-kids','Pizza kids','Pizza mini'],['burger-kids','Mini burger','Mini hamburguesa'],['nuggets-kids','Nuggets kids','Mini nuggets']]) add(id,'infantil',name,149,`${description}, papas a la francesa, jugo chico y regalo sorpresa.`,{image:id==='pizza-kids'?'kids':undefined,page:14});
 
+// Conservar el catálogo histórico; la carta ofrece únicamente estas cervezas.
+const beerIds = new Set(['cerveza','mega','bohemia','modelo']);
+for (const product of products) if (product.category === 'bar' && !beerIds.has(product.id)) product.available = false;
 export const catalog = products;
 export const pizzaExtras = ['Peperoni','Jamón','Piña','Champiñones','Cebolla','Morrón','Aceitunas negras','Gouda','Manchego','Mozzarella','Longaniza','Serrano','Aguacate','Salami','Tocino','Bistec','Pastor','Cilantro','Boneless','Cecina de Yecapixtla','Cebolla caramelizada','Jamón serrano','Jitomate deshidratado','Queso de cabra'];
 export const business = {

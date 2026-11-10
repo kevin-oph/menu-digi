@@ -286,9 +286,27 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Repositorio local inicializado y archivos auditados para excluir .env, secretos, bases, respaldos y dependencias. Documentación del proyecto incorporada en docs.
 - La primera consulta del conector GitHub devolvió 404 por falta de acceso al repositorio; Git solicitó autenticación. No declarar subida ni demo pública completadas hasta verificar el resultado remoto.
 
-## 9 de noviembre de 2026 — Repositorio y publicación de demo
+## 9 de noviembre de 2026 — Fotos de productos desde Facebook
 
-- Credenciales locales de Git verificadas; proyecto subido a kevin-oph/menu-digi.
-- El usuario autorizó explícitamente hacer público el repositorio para GitHub Pages gratuito. Visibilidad pública verificada.
-- Pages habilitado con GitHub Actions; demo en https://kevin-oph.github.io/menu-digi/. Comprobar ejecución exitosa del workflow y carga pública antes de compartir como disponible.
-- Conservada separación entre demo visual sin backend y aplicación Docker completa. Claves locales, bases, respaldos y dependencias excluidos del repositorio.
+- Fanpage indicada por el usuario: https://www.facebook.com/pizzetasartesanales . Acceso público sin iniciar sesión; descargadas imágenes desde el visor ampliado.
+- Primer lote: 32 archivos revisados y 18 fotos de alimentos/bebidas seleccionadas, separando personas, decoración, eventos y anuncios. No es todo el historial de Facebook.
+- Entrega local: FOTOS_FACEBOOK_PIZZETAS.zip, hoja VISTA_PREVIA.jpg e índices CSV/JSON con resolución, origen y SHA-256. ZIP comprobado sin errores; fotos de al menos 1086 píxeles por lado.
+- Agrupación: 8 bebidas, 5 postres, 4 pizzas/snacks, 1 ensalada. Nombres descriptivos orientativos; confirmar especialidades exactas antes de asignar.
+- No se modificó el catálogo, no se asignaron imágenes automáticamente y no se publicaron estos archivos en GitHub.
+
+## 9 de noviembre de 2026 — Fotos incorporadas a carta local
+
+- Usuario autorizó asignación provisional de las 18 fotos a los productos más parecidos y marcarlas como orientativas.
+- Respaldo coherente de PostgreSQL, fotos y claves antes del cambio, conservado en work/antes-fotos-facebook.
+- Carga por API administrativa con versión esperada, optimización y etiquetas «Foto orientativa». No se renombraron los productos ni se cambiaron precios, variantes, ingredientes, disponibilidad ni configuración del negocio.
+- Verificación: 18 fotos y sus 18 miniaturas accesibles; 119 productos conservados; comparación de todos los precios/opciones aprobada.
+- Navegador móvil: fotos de crepa y pan de elote visibles y pan de elote cargado con ancho natural de 360 px. Captura FOTOS_CARTA_LOCAL_MOVIL.png.
+- Tabla de correspondencias en ASIGNACION_FOTOS_CARTA.md. Cambios en base Docker local; demo estática pública y seed original sin modificar.
+
+## 9 de noviembre de 2026 — Sección Cervezas
+
+- Usuario confirmó conservar exclusivamente cervezas, sin tarro preparado.
+- Categoría visible Bar renombrada a Cervezas (se conserva su identificador interno para mantener referencias).
+- Disponibles únicamente Cerveza 355 ml, Cerveza mega, Bohemia y Modelo Especial. Los otros 40 productos de esa categoría quedaron desactivados, conservando su información e historial.
+- Aplicado en PostgreSQL local mediante API con control de versión. Respaldo de estado anterior en work/importacion-facebook/carta-antes-solo-cervezas.json. Comparación verificó precios, fotos, opciones y demás categorías sin cambios.
+- Catálogo base y seed actualizados para nuevas instalaciones y demo estática. 30 pruebas frontend aprobadas y compilación de demo exitosa.
