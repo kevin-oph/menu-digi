@@ -310,3 +310,11 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Disponibles únicamente Cerveza 355 ml, Cerveza mega, Bohemia y Modelo Especial. Los otros 40 productos de esa categoría quedaron desactivados, conservando su información e historial.
 - Aplicado en PostgreSQL local mediante API con control de versión. Respaldo de estado anterior en work/importacion-facebook/carta-antes-solo-cervezas.json. Comparación verificó precios, fotos, opciones y demás categorías sin cambios.
 - Catálogo base y seed actualizados para nuevas instalaciones y demo estática. 30 pruebas frontend aprobadas y compilación de demo exitosa.
+
+## 9 de noviembre de 2026 — Imagen de pizza de dos mitades
+
+- Sustituida la imagen de rebanada por la fotografía de pizza de dos mitades proporcionada por el usuario.
+- Fotografía original conservada; encuadre elíptico, sombra y composición realizados en CSS sin regenerar ingredientes ni editar el archivo original.
+- Escritorio: texto a la izquierda y pizza protagonista a la derecha. Móvil: texto y botón arriba, pizza amplia debajo, sin superponer el texto sobre la comida.
+- Revisado en navegador a 390 px y escritorio; capturas PIZZA_MITADES_MOVIL.png y PIZZA_MITADES_ESCRITORIO.png. Compilación de demo aprobada.
+- No se modificaron productos, precios, pedidos ni datos de configuración.
