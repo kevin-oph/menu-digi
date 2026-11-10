@@ -318,3 +318,28 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Escritorio: texto a la izquierda y pizza protagonista a la derecha. Móvil: texto y botón arriba, pizza amplia debajo, sin superponer el texto sobre la comida.
 - Revisado en navegador a 390 px y escritorio; capturas PIZZA_MITADES_MOVIL.png y PIZZA_MITADES_ESCRITORIO.png. Compilación de demo aprobada.
 - No se modificaron productos, precios, pedidos ni datos de configuración.
+
+## 9 de noviembre de 2026 — Fotos propias de carpeta PIZZETAS
+
+- Revisados visualmente 20 archivos de la carpeta indicada por el usuario.
+- Cargadas 14 fotos identificadas por nombre en 9 pizzas, Cheese burger, Onion rings burger, Costillitas mix, Fungi y Pizza mix. Guardadas por API con control de versión y optimización.
+- Retiradas etiquetas provisionales anteriores de los productos ahora identificados. Conservados precios, variantes, nombres, disponibilidad y opciones; 28 recursos de foto/miniatura comprobados.
+- Estado previo guardado en work/fotos-carpeta-pizzetas/antes.json. Correspondencias en ASIGNACION_CARPETA_PIZZETAS.md.
+- BURGER.jpg y PIZZA.jpg pendientes de identificación por el usuario. Cenas románticas, CLERICOT y TARDES fuera de fichas del catálogo vigente. Fuente original intacta.
+- Aplicado solo a la carta local de Docker; sin publicación de estas fotos en la demo estática.
+
+## 10 de noviembre de 2026 — Fotos nuevas y mojitos
+
+- Revisadas 15 fotos nuevas de PIZZETAS; cargadas 14 en sus productos por API y control de versión. boneless-snack.jpg elegida para Boneless; boneless.jpg conservada como alternativa.
+- Mojito habilitado junto a las cuatro cervezas; sección renombrada «Cervezas y mojitos». Conservadas variantes Frutal $110 y Frapeado $120 y sabores del menú. Ninguna otra bebida del bar reactivada.
+- Comprobadas 28 imágenes (fotos y miniaturas), precios, opciones, nombres y demás disponibilidades. Estado previo guardado en work/fotos-nuevas-20261110/antes.json.
+- BURGER.jpg, PIZZA.jpg, CLERICOT.jpg y TARDES.jpg omitidos según respuesta del usuario, igual que cenas románticas.
+- Cambios de datos en carta local Docker, sin modificar el catálogo estático de la demo pública. Correspondencias en ASIGNACION_FOTOS_NUEVAS_20261110.md.
+
+## 10 de noviembre de 2026 — Sincronización de demo y repositorio
+
+- Usuario solicitó subir los cambios acumulados y ampliar la presentación en github.io. Exportada instantánea pública de la carta local: 80 productos disponibles y 39 fotos aprobadas optimizadas.
+- Cervezas y mojitos con sus precios/opciones actuales. Conservado diseño de dos mitades con foto propia y recorrido simulado.
+- Configuración exportada limitada a identidad visual y tiempos orientativos. Sin bancos, contactos privados, claves ni pedidos; excluidas fotos personales de pruebas y archivos omitidos.
+- Seed portable de 119 productos actualizado para nuevas instalaciones; no sobrescribe la base operativa existente.
+- 30 pruebas frontend y compilación de demo aprobadas. Documentación acumulada incorporada. La demo sigue siendo estática; no sincroniza futuras ediciones automáticamente.

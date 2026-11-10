@@ -1,119 +1,336 @@
 {
   "products": [
     {
-      "id": "peperoni",
-      "category": "pizzas",
-      "name": "Peperoni",
-      "description": "Peperoni y mozzarella.",
+      "id": "1800",
+      "category": "bar",
+      "name": "Tequila 1800",
+      "description": "Las botellas incluyen cuatro mezcladores.",
       "variants": [
         {
-          "name": "Personal",
-          "price": 15000
+          "name": "Copa",
+          "price": 9500
         },
         {
-          "name": "Grande",
-          "price": 26000
+          "name": "Botella",
+          "price": 110000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "absolut",
+      "category": "bar",
+      "name": "Absolut",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 9500
+        },
+        {
+          "name": "Botella",
+          "price": 95000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "agua",
+      "category": "bebidas",
+      "name": "Agua 600 ml",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 3000
         }
       ],
       "available": true,
-      "image": "pizza",
-      "page": 2,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "page": 11
     },
     {
-      "id": "tropical",
-      "category": "pizzas",
-      "name": "Tropical",
-      "description": "Mozzarella, piña y jamón.",
+      "id": "agua-sabor",
+      "category": "bebidas",
+      "name": "Agua fresca de sabor",
+      "description": "Consulta el sabor del día.",
       "variants": [
         {
-          "name": "Personal",
-          "price": 15500
+          "name": "Individual",
+          "price": 3000
         },
         {
-          "name": "Grande",
-          "price": 27000
+          "name": "Jarra",
+          "price": 12000
         }
       ],
       "available": true,
-      "image": "pizza",
-      "page": 2,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "page": 11
     },
     {
-      "id": "vegetariana",
-      "category": "pizzas",
-      "name": "Vegetariana",
-      "description": "Piña, morrón, champiñones, cebolla y aceitunas negras.",
+      "id": "alfonso",
+      "category": "bar",
+      "name": "Alfonso XIII",
+      "description": "",
       "variants": [
         {
-          "name": "Personal",
-          "price": 15500
-        },
-        {
-          "name": "Grande",
-          "price": 27000
+          "name": "Regular",
+          "price": 10500
         }
       ],
-      "available": true,
-      "image": "pizza",
-      "page": 2,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "available": false,
+      "page": 12
     },
     {
-      "id": "tres-quesos",
-      "category": "pizzas",
-      "name": "3 quesos",
-      "description": "Mozzarella, gouda, manchego y especias.",
+      "id": "alfredo",
+      "category": "pastas",
+      "name": "Alfredo",
+      "description": "Crema, mantequilla, parmesano y perejil. Incluye dos panes de ajo.",
       "variants": [
         {
-          "name": "Personal",
-          "price": 15500
-        },
-        {
-          "name": "Grande",
-          "price": 27000
-        }
-      ],
-      "available": true,
-      "image": "pizza",
-      "page": 2,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
-    },
-    {
-      "id": "mexicana",
-      "category": "pizzas",
-      "name": "Mexicana",
-      "description": "Longaniza, cebolla, serrano y aguacate.",
-      "variants": [
-        {
-          "name": "Personal",
+          "name": "Regular",
           "price": 16000
-        },
-        {
-          "name": "Grande",
-          "price": 28000
         }
       ],
       "available": true,
-      "image": "pizza",
-      "page": 2,
+      "image": "pasta",
+      "page": 4
+    },
+    {
+      "id": "alitas",
+      "category": "snacks",
+      "name": "Alitas",
+      "description": "Diez piezas con tu salsa favorita.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 16000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Salsa",
+          "values": [
+            "Tamarindo habanero",
+            "Mango habanero",
+            "BBQ",
+            "Buffalo",
+            "Limón pimienta",
+            "Parmesano",
+            "Salsa macha",
+            "De la casa"
+          ]
+        }
+      ],
+      "page": 6,
+      "image": "catalogo/alitas-3608509382ef"
+    },
+    {
+      "id": "americano",
+      "category": "bebidas",
+      "name": "Café americano",
+      "description": "Foto orientativa: Café para llevar. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 3500
+        }
+      ],
+      "available": true,
+      "page": 10,
+      "image": "catalogo/americano-aace0ce6071b"
+    },
+    {
+      "id": "aros",
+      "category": "snacks",
+      "name": "Aros de cebolla",
+      "description": "",
+      "variants": [
+        {
+          "name": "9 piezas",
+          "price": 11000
+        },
+        {
+          "name": "12 piezas",
+          "price": 12000
+        },
+        {
+          "name": "15 piezas",
+          "price": 13000
+        }
+      ],
+      "available": true,
+      "page": 6,
+      "image": "catalogo/aros-fbda016c1c5d"
+    },
+    {
+      "id": "azul",
+      "category": "bar",
+      "name": "Tequila Azul",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 7000
+        },
+        {
+          "name": "Botella",
+          "price": 70000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "bacardi",
+      "category": "bar",
+      "name": "Bacardí",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 7000
+        },
+        {
+          "name": "Botella",
+          "price": 70000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "baileys",
+      "category": "bar",
+      "name": "Baileys colado de la casa",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 12000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "bloody",
+      "category": "bar",
+      "name": "Blody Mary",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 11000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "bohemia",
+      "category": "bar",
+      "name": "Cerveza Bohemia",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 5500
+        }
+      ],
+      "available": true,
+      "page": 11
+    },
+    {
+      "id": "bolognesa",
+      "category": "pastas",
+      "name": "Bolognesa de la casa",
+      "description": "Carne molida en salsa de jitomate, crema y manchego gratinado. Con dos panes de ajo.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 17000
+        }
+      ],
+      "available": true,
+      "page": 4,
+      "image": "catalogo/bolognesa-65e464aa3da7"
+    },
+    {
+      "id": "boneless",
+      "category": "snacks",
+      "name": "Boneless",
+      "description": "Elige la salsa que se te antoje.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 16000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Salsa",
+          "values": [
+            "Tamarindo habanero",
+            "Mango habanero",
+            "BBQ",
+            "Buffalo",
+            "Limón pimienta",
+            "Parmesano"
+          ]
+        }
+      ],
+      "page": 6,
+      "image": "catalogo/boneless-7f8330a12bd7"
+    },
+    {
+      "id": "boneless-burger",
+      "category": "burgers",
+      "name": "Boneless burger",
+      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella y boneless.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 20000
+        }
+      ],
+      "available": true,
+      "page": 9,
+      "choices": [
+        {
+          "label": "Salsa de boneless",
+          "values": [
+            "Tamarindo habanero",
+            "Mango habanero",
+            "BBQ",
+            "Buffalo",
+            "Limón pimienta",
+            "Parmesano"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boneless-pizza",
+      "category": "pizzas",
+      "name": "Boneless",
+      "description": "Mozzarella acompañada de boneless.",
+      "variants": [
+        {
+          "name": "Personal",
+          "price": 18500
+        },
+        {
+          "name": "Grande",
+          "price": 31000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/boneless-pizza-052f98b0e5f0",
+      "page": 3,
       "tags": [
         "pizza",
         "mozzarella"
@@ -121,28 +338,128 @@
       "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "ranchera",
+      "id": "buchanans",
+      "category": "bar",
+      "name": "Buchanans 12",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 13000
+        },
+        {
+          "name": "Botella",
+          "price": 130000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "burger-kids",
+      "category": "infantil",
+      "name": "Mini burger",
+      "description": "Mini hamburguesa, papas a la francesa, jugo chico y regalo sorpresa.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 14900
+        }
+      ],
+      "available": true,
+      "page": 14
+    },
+    {
+      "id": "camarones",
+      "category": "pastas",
+      "name": "Pasta con camarones",
+      "description": "Con dos piezas de pan de ajo.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 19500
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Salsa",
+          "values": [
+            "Crema",
+            "Chipotle"
+          ]
+        }
+      ],
+      "page": 4,
+      "image": "catalogo/camarones-4142c88573f2"
+    },
+    {
+      "id": "capricciosa",
       "category": "pizzas",
-      "name": "Ranchera",
-      "description": "Longaniza, champiñones, cebolla y serrano.",
+      "name": "Capricciosa",
+      "description": "Jamón serrano, jitomate deshidratado, queso de cabra y aceitunas negras.",
       "variants": [
         {
           "name": "Personal",
-          "price": 16000
+          "price": 19500
         },
         {
           "name": "Grande",
-          "price": 28000
+          "price": 32000
         }
       ],
       "available": true,
       "image": "pizza",
-      "page": 2,
+      "page": 3,
       "tags": [
         "pizza",
         "mozzarella"
       ],
       "baseDescription": "Con salsa de jitomate y mozzarella."
+    },
+    {
+      "id": "capuccino",
+      "category": "bebidas",
+      "name": "Capuccino",
+      "description": "Foto orientativa: Café con espuma. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 6800
+        }
+      ],
+      "available": true,
+      "page": 10,
+      "image": "catalogo/capuccino-3b40ca7add23"
+    },
+    {
+      "id": "carajillo",
+      "category": "bar",
+      "name": "Carajillo",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10500
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "carbonara",
+      "category": "pastas",
+      "name": "Carbonara",
+      "description": "Crema, mantequilla, parmesano y tocino. Con dos panes de ajo.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 16000
+        }
+      ],
+      "available": true,
+      "page": 4,
+      "image": "catalogo/carbonara-4c3993e37d23"
     },
     {
       "id": "carnes-frias",
@@ -160,7 +477,7 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/carnes-frias-7bba5c12a134",
       "page": 2,
       "tags": [
         "pizza",
@@ -169,58 +486,633 @@
       "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "nortena",
-      "category": "pizzas",
-      "name": "Norteña",
-      "description": "Jamón, bistec, cebolla y morrón.",
+      "id": "casillero",
+      "category": "bar",
+      "name": "Vino Casillero del Diablo",
+      "description": "",
       "variants": [
         {
-          "name": "Personal",
-          "price": 16000
+          "name": "Copa",
+          "price": 12100
+        },
+        {
+          "name": "Botella",
+          "price": 50400
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "cerveza",
+      "category": "bar",
+      "name": "Cerveza 355 ml",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 5000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Marca",
+          "values": [
+            "Corona",
+            "Victoria",
+            "Heineken",
+            "Tecate Light",
+            "Tecate Roja",
+            "Ultra",
+            "Indio",
+            "XX Lager"
+          ]
+        }
+      ],
+      "page": 11
+    },
+    {
+      "id": "chamoyada",
+      "category": "bebidas",
+      "name": "Chamoyada",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 7000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Fresa",
+            "Mango",
+            "Pepino",
+            "Piña"
+          ]
+        }
+      ],
+      "page": 11,
+      "image": "catalogo/chamoyada-3515088d8799"
+    },
+    {
+      "id": "charola-mix",
+      "category": "snacks",
+      "name": "Charola mix",
+      "description": "Aros, dedos de queso, alitas, boneless, papas francesa y gajo, ranch y vegetales. Foto orientativa: Snacks surtidos 01. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 31000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/charola-mix-c8a1c77d3ce4",
+      "page": 8
+    },
+    {
+      "id": "cheese",
+      "category": "burgers",
+      "name": "Cheese burger",
+      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella y tocino.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 17000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/cheese-9839eb67534a",
+      "page": 9
+    },
+    {
+      "id": "citrico",
+      "category": "bebidas",
+      "name": "Limonada o naranjada",
+      "description": "Natural o mineral.",
+      "variants": [
+        {
+          "name": "Natural",
+          "price": 6000
+        },
+        {
+          "name": "Mineral",
+          "price": 6500
+        },
+        {
+          "name": "Jarra natural",
+          "price": 18000
+        },
+        {
+          "name": "Jarra mineral",
+          "price": 25000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Limón",
+            "Naranja"
+          ]
+        }
+      ],
+      "page": 11
+    },
+    {
+      "id": "clamato",
+      "category": "bebidas",
+      "name": "Clamato preparado",
+      "description": "",
+      "variants": [
+        {
+          "name": "Chico",
+          "price": 7500
         },
         {
           "name": "Grande",
+          "price": 12000
+        }
+      ],
+      "available": true,
+      "page": 11
+    },
+    {
+      "id": "clericot-casa",
+      "category": "bar",
+      "name": "Clericot De la casa",
+      "description": "Foto orientativa: Bebida roja en vaso. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 9000
+        },
+        {
+          "name": "Jarra",
+          "price": 35000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "clericot-casilleros",
+      "category": "bar",
+      "name": "Clericot Casilleros",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 15500
+        },
+        {
+          "name": "Jarra",
+          "price": 60000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "clericot-finca",
+      "category": "bar",
+      "name": "Clericot Finca Las Moras",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 14500
+        },
+        {
+          "name": "Jarra",
+          "price": 55000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "clericot-lambrusco",
+      "category": "bar",
+      "name": "Clericot Lambrusco",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 14000
+        },
+        {
+          "name": "Jarra",
+          "price": 50000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "clericot-rojos",
+      "category": "bar",
+      "name": "Clericot Frutos rojos",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 15000
+        },
+        {
+          "name": "Jarra",
+          "price": 40000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "clericot-rosado",
+      "category": "bar",
+      "name": "Clericot Rosado",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 9500
+        },
+        {
+          "name": "Jarra",
+          "price": 36000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "coco",
+      "category": "bar",
+      "name": "Coco cielo",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 13000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "conga",
+      "category": "bar",
+      "name": "Conga",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "costillitas",
+      "category": "snacks",
+      "name": "Costillitas",
+      "description": "Bañadas en la salsa que elijas.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 23000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Salsa",
+          "values": [
+            "Tamarindo habanero",
+            "Mango habanero",
+            "BBQ",
+            "Buffalo",
+            "Limón pimienta",
+            "Parmesano"
+          ]
+        }
+      ],
+      "page": 7
+    },
+    {
+      "id": "costillitas-mix",
+      "category": "snacks",
+      "name": "Costillitas mix",
+      "description": "Aros, dedos de queso, papas, guacamole y costillitas.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 35000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Salsa de costillitas",
+          "values": [
+            "Tamarindo habanero",
+            "Mango habanero",
+            "BBQ",
+            "Buffalo",
+            "Limón pimienta",
+            "Parmesano"
+          ]
+        }
+      ],
+      "page": 8,
+      "image": "catalogo/costillitas-mix-f7df19c5e7c6"
+    },
+    {
+      "id": "crepa-combinada",
+      "category": "postres",
+      "name": "Crepa o waffle combinado",
+      "description": "Nutella, Philadelphia, plátano, fresa, durazno y helados de vainilla o chocolate.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 11000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Base",
+          "values": [
+            "Crepa",
+            "Waffle"
+          ]
+        }
+      ],
+      "page": 10
+    },
+    {
+      "id": "crepa-especial",
+      "category": "postres",
+      "name": "Crepa o waffle especial",
+      "description": "Crepizza, hawaiana o tropical.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 11000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Base",
+          "values": [
+            "Crepa",
+            "Waffle"
+          ]
+        },
+        {
+          "label": "Especialidad",
+          "values": [
+            "Crepizza",
+            "Hawaiana",
+            "Tropical"
+          ]
+        }
+      ],
+      "page": 10
+    },
+    {
+      "id": "crepa-salada",
+      "category": "postres",
+      "name": "Crepa o waffle salado",
+      "description": "Un antojo salado.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 9900
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Base",
+          "values": [
+            "Crepa",
+            "Waffle"
+          ]
+        },
+        {
+          "label": "Relleno",
+          "values": [
+            "Manchego con jamón",
+            "Philadelphia con jamón"
+          ]
+        }
+      ],
+      "page": 10
+    },
+    {
+      "id": "crepa-sencilla",
+      "category": "postres",
+      "name": "Crepa o waffle sencillo",
+      "description": "Elige la base y tu sabor. Foto orientativa: Crepa. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 9000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/crepa-sencilla-4c6beedcb68f",
+      "choices": [
+        {
+          "label": "Base",
+          "values": [
+            "Crepa",
+            "Waffle"
+          ]
+        },
+        {
+          "label": "Sabor",
+          "values": [
+            "Nutella",
+            "Cajeta",
+            "Lechera",
+            "Fresa",
+            "Zarzamora",
+            "Hershey"
+          ]
+        }
+      ],
+      "page": 10
+    },
+    {
+      "id": "cuervo",
+      "category": "bar",
+      "name": "Tequila José Cuervo",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 7500
+        },
+        {
+          "name": "Botella",
+          "price": 75000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "dedos",
+      "category": "snacks",
+      "name": "Dedos de queso",
+      "description": "Crujientes por fuera, queso por dentro.",
+      "variants": [
+        {
+          "name": "6 piezas",
+          "price": 13000
+        },
+        {
+          "name": "8 piezas",
+          "price": 16000
+        },
+        {
+          "name": "10 piezas",
+          "price": 18000
+        }
+      ],
+      "available": true,
+      "page": 6
+    },
+    {
+      "id": "don-julio",
+      "category": "bar",
+      "name": "Don Julio 70",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 15000
+        },
+        {
+          "name": "Botella",
+          "price": 150000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "duraznos",
+      "category": "postres",
+      "name": "Duraznos con lechera",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 6000
+        }
+      ],
+      "available": true,
+      "page": 10
+    },
+    {
+      "id": "elote",
+      "category": "postres",
+      "name": "Pan de elote",
+      "description": "Foto orientativa: Pan de elote. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 7500
+        }
+      ],
+      "available": true,
+      "page": 10,
+      "image": "catalogo/elote-505d61fd460c"
+    },
+    {
+      "id": "empanada",
+      "category": "pastas",
+      "name": "Empanada individual",
+      "description": "Una pieza, elige tu relleno.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 4500
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Relleno",
+          "values": [
+            "Queso con espinacas",
+            "Carne",
+            "Queso con elote",
+            "Queso con jitomate deshidratado"
+          ]
+        }
+      ],
+      "page": 4
+    },
+    {
+      "id": "empanadas-casa",
+      "category": "pastas",
+      "name": "Empanadas de la casa",
+      "description": "Con una ración de carnes frías, quesos y ensalada.",
+      "variants": [
+        {
+          "name": "Regular",
           "price": 28000
         }
       ],
       "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
+      "image": "empanadas",
+      "page": 4
+    },
+    {
+      "id": "ensalada-chef",
+      "category": "pastas",
+      "name": "Ensalada del chef",
+      "description": "Lechugas, espinaca, pollo a la plancha, queso, crotones, manzana y semillas de girasol. Foto orientativa: Ensalada. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 15000
+        }
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "available": true,
+      "page": 5,
+      "image": "catalogo/ensalada-chef-a61ecffcc0f6"
+    },
+    {
+      "id": "ensalada-frutal",
+      "category": "pastas",
+      "name": "Frutal de la casa",
+      "description": "Lechugas, fresa, kiwi, mango de temporada, arándanos, nuez y ajonjolí.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 14000
+        }
+      ],
+      "available": true,
+      "page": 5,
+      "image": "catalogo/ensalada-frutal-5c947f0edb12"
     },
     {
       "id": "especial",
       "category": "pizzas",
       "name": "Especial",
       "description": "Jamón, piña, champiñones, cebolla y tocino.",
-      "variants": [
-        {
-          "name": "Personal",
-          "price": 16500
-        },
-        {
-          "name": "Grande",
-          "price": 29000
-        }
-      ],
-      "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
-    },
-    {
-      "id": "suprema",
-      "category": "pizzas",
-      "name": "Suprema",
-      "description": "Jamón, champiñones, cebolla, morrón y tocino.",
       "variants": [
         {
           "name": "Personal",
@@ -256,7 +1148,7 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/extrema-11ce77aa76ad",
       "page": 3,
       "tags": [
         "pizza",
@@ -265,115 +1157,74 @@
       "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "pastor",
-      "category": "pizzas",
-      "name": "Pastor",
-      "description": "Pastor, piña, cebolla y cilantro.",
+      "id": "finca",
+      "category": "bar",
+      "name": "Vino Finca Las Moras",
+      "description": "",
       "variants": [
         {
-          "name": "Personal",
-          "price": 17500
+          "name": "Copa",
+          "price": 11000
         },
         {
-          "name": "Grande",
-          "price": 30000
+          "name": "Botella",
+          "price": 44100
         }
       ],
-      "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "available": false,
+      "page": 11
     },
     {
-      "id": "boneless-pizza",
-      "category": "pizzas",
-      "name": "Boneless",
-      "description": "Mozzarella acompañada de boneless.",
-      "variants": [
-        {
-          "name": "Personal",
-          "price": 18500
-        },
-        {
-          "name": "Grande",
-          "price": 31000
-        }
-      ],
-      "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
-    },
-    {
-      "id": "yecapizza",
-      "category": "pizzas",
-      "name": "Yecapizza",
-      "description": "Cecina de Yecapixtla, serrano, aguacate y cebolla caramelizada.",
-      "variants": [
-        {
-          "name": "Personal",
-          "price": 17500
-        },
-        {
-          "name": "Grande",
-          "price": 30000
-        }
-      ],
-      "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
-    },
-    {
-      "id": "capricciosa",
-      "category": "pizzas",
-      "name": "Capricciosa",
-      "description": "Jamón serrano, jitomate deshidratado, queso de cabra y aceitunas negras.",
-      "variants": [
-        {
-          "name": "Personal",
-          "price": 19500
-        },
-        {
-          "name": "Grande",
-          "price": 32000
-        }
-      ],
-      "available": true,
-      "image": "pizza",
-      "page": 3,
-      "tags": [
-        "pizza",
-        "mozzarella"
-      ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
-    },
-    {
-      "id": "alfredo",
-      "category": "pastas",
-      "name": "Alfredo",
-      "description": "Crema, mantequilla, parmesano y perejil. Incluye dos panes de ajo.",
+      "id": "frappe",
+      "category": "bebidas",
+      "name": "Frappé sencillo",
+      "description": "Foto orientativa: Bebida cremosa. Asignación provisional.",
       "variants": [
         {
           "name": "Regular",
-          "price": 16000
+          "price": 9000
         }
       ],
       "available": true,
-      "image": "pasta",
-      "page": 4
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Moka",
+            "Capuccino",
+            "Oreo",
+            "Mazapán"
+          ]
+        }
+      ],
+      "page": 10,
+      "image": "catalogo/frappe-7e5267cbaff6"
+    },
+    {
+      "id": "frappe-especial",
+      "category": "bebidas",
+      "name": "Frappé especial",
+      "description": "Foto orientativa: Bebida frappé. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 11000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Magnum",
+            "Mordisko",
+            "Ferrero",
+            "Kit Kat"
+          ]
+        }
+      ],
+      "page": 10,
+      "image": "catalogo/frappe-especial-93da223e1da6"
     },
     {
       "id": "fungi",
@@ -387,175 +1238,246 @@
         }
       ],
       "available": true,
-      "page": 4
-    },
-    {
-      "id": "carbonara",
-      "category": "pastas",
-      "name": "Carbonara",
-      "description": "Crema, mantequilla, parmesano y tocino. Con dos panes de ajo.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 16000
-        }
-      ],
-      "available": true,
-      "page": 4
-    },
-    {
-      "id": "camarones",
-      "category": "pastas",
-      "name": "Pasta con camarones",
-      "description": "Con dos piezas de pan de ajo.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 19500
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Salsa",
-          "values": [
-            "Crema",
-            "Chipotle"
-          ]
-        }
-      ],
-      "page": 4
-    },
-    {
-      "id": "bolognesa",
-      "category": "pastas",
-      "name": "Bolognesa de la casa",
-      "description": "Carne molida en salsa de jitomate, crema y manchego gratinado. Con dos panes de ajo.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 17000
-        }
-      ],
-      "available": true,
-      "page": 4
-    },
-    {
-      "id": "empanadas-casa",
-      "category": "pastas",
-      "name": "Empanadas de la casa",
-      "description": "Con una ración de carnes frías, quesos y ensalada.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 28000
-        }
-      ],
-      "available": true,
-      "image": "empanadas",
       "page": 4,
-      "advisory": "Consulta con el negocio los rellenos y piezas incluidos."
+      "image": "catalogo/fungi-5ca2649c7d93"
     },
     {
-      "id": "empanada",
-      "category": "pastas",
-      "name": "Empanada individual",
-      "description": "Una pieza, elige tu relleno.",
+      "id": "gajo",
+      "category": "snacks",
+      "name": "Papas gajo",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
-          "price": 4500
+          "price": 9500
         }
       ],
       "available": true,
-      "choices": [
-        {
-          "label": "Relleno",
-          "values": [
-            "Queso con espinacas",
-            "Carne",
-            "Queso con elote",
-            "Queso con jitomate deshidratado"
-          ]
-        }
-      ],
-      "page": 4
+      "page": 7
     },
     {
-      "id": "ensalada-chef",
-      "category": "pastas",
-      "name": "Ensalada del chef",
-      "description": "Lechugas, espinaca, pollo a la plancha, queso, crotones, manzana y semillas de girasol.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 15000
-        }
-      ],
-      "available": true,
-      "page": 5
-    },
-    {
-      "id": "ensalada-frutal",
-      "category": "pastas",
-      "name": "Frutal de la casa",
-      "description": "Lechugas, fresa, kiwi, mango de temporada, arándanos, nuez y ajonjolí.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 14000
-        }
-      ],
-      "available": true,
-      "page": 5
-    },
-    {
-      "id": "pan-ajo",
-      "category": "pastas",
-      "name": "Pan de ajo",
-      "description": "Tapitas de pan artesanal perfumado con especias.",
+      "id": "gintonic",
+      "category": "bar",
+      "name": "Gintonic frutal",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
           "price": 10500
         }
       ],
-      "available": true,
-      "page": 5
-    },
-    {
-      "id": "pan-gratinado",
-      "category": "pastas",
-      "name": "Pan de ajo gratinado",
-      "description": "Con especias y queso parmesano.",
-      "variants": [
+      "available": false,
+      "choices": [
         {
-          "name": "Regular",
-          "price": 12000
+          "label": "Sabor",
+          "values": [
+            "Limón",
+            "Mandarina",
+            "Naranja",
+            "Pepino"
+          ]
         }
       ],
-      "available": true,
-      "page": 5
+      "page": 12
     },
     {
-      "id": "tapas-queso",
-      "category": "pastas",
-      "name": "Tapas de queso de cabra",
-      "description": "Seis tapitas de pan de ajo con queso de cabra.",
+      "id": "habana",
+      "category": "bar",
+      "name": "Luces de Habana",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
           "price": 11000
         }
       ],
-      "available": true,
-      "page": 5
+      "available": false,
+      "page": 12
     },
     {
-      "id": "tapas-serrano",
-      "category": "pastas",
-      "name": "Tapas de jamón serrano",
-      "description": "Seis tapitas con queso de cabra y jamón serrano.",
+      "id": "hawaiian",
+      "category": "burgers",
+      "name": "Hawaiian burger",
+      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella, tocino y piña.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 18000
+        }
+      ],
+      "available": true,
+      "page": 9
+    },
+    {
+      "id": "jack",
+      "category": "bar",
+      "name": "Jack Daniels",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 9000
+        },
+        {
+          "name": "Botella",
+          "price": 90000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "laguna",
+      "category": "bar",
+      "name": "Laguna azul",
+      "description": "Foto orientativa: Bebida azul. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10500
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "lambrusco",
+      "category": "bar",
+      "name": "Vino Lambrusco",
+      "description": "",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 9500
+        },
+        {
+          "name": "Botella",
+          "price": 40000
+        }
+      ],
+      "available": false,
+      "page": 11
+    },
+    {
+      "id": "malteada",
+      "category": "bebidas",
+      "name": "Malteada",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 6500
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Fresa",
+            "Chocolate"
+          ]
+        }
+      ],
+      "page": 11
+    },
+    {
+      "id": "margarichelada",
+      "category": "bar",
+      "name": "Margarichelada",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 15000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "margarita",
+      "category": "bar",
+      "name": "Margarita",
+      "description": "Foto orientativa: Bebida roja en copa. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 12000
+        }
+      ],
+      "available": false,
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Tradicional",
+            "Blue",
+            "Japonesa",
+            "Piña",
+            "Maracuyá",
+            "Pepino",
+            "Fresa"
+          ]
+        }
+      ],
+      "page": 12
+    },
+    {
+      "id": "mega",
+      "category": "bar",
+      "name": "Cerveza mega",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Marca",
+          "values": [
+            "Corona",
+            "Victoria",
+            "XX Lager",
+            "Heineken",
+            "Tecate Light"
+          ]
+        }
+      ],
+      "page": 11
+    },
+    {
+      "id": "mexicana",
+      "category": "pizzas",
+      "name": "Mexicana",
+      "description": "Longaniza, cebolla, serrano y aguacate.",
+      "variants": [
+        {
+          "name": "Personal",
+          "price": 16000
+        },
+        {
+          "name": "Grande",
+          "price": 28000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/mexicana-a3e7d56968f2",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
+    },
+    {
+      "id": "mini-pastel",
+      "category": "postres",
+      "name": "Mini pastel",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
@@ -563,126 +1485,53 @@
         }
       ],
       "available": true,
-      "image": "tapas",
-      "page": 5
+      "page": 10
     },
     {
-      "id": "alitas",
-      "category": "snacks",
-      "name": "Alitas",
-      "description": "Diez piezas con tu salsa favorita.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 16000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Salsa",
-          "values": [
-            "Tamarindo habanero",
-            "Mango habanero",
-            "BBQ",
-            "Buffalo",
-            "Limón pimienta",
-            "Parmesano",
-            "Salsa macha",
-            "De la casa"
-          ]
-        }
-      ],
-      "page": 6
-    },
-    {
-      "id": "boneless",
-      "category": "snacks",
-      "name": "Boneless",
-      "description": "Elige la salsa que se te antoje.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 16000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Salsa",
-          "values": [
-            "Tamarindo habanero",
-            "Mango habanero",
-            "BBQ",
-            "Buffalo",
-            "Limón pimienta",
-            "Parmesano"
-          ]
-        }
-      ],
-      "page": 6
-    },
-    {
-      "id": "dedos",
-      "category": "snacks",
-      "name": "Dedos de queso",
-      "description": "Crujientes por fuera, queso por dentro.",
-      "variants": [
-        {
-          "name": "6 piezas",
-          "price": 13000
-        },
-        {
-          "name": "8 piezas",
-          "price": 16000
-        },
-        {
-          "name": "10 piezas",
-          "price": 18000
-        }
-      ],
-      "available": true,
-      "page": 6
-    },
-    {
-      "id": "aros",
-      "category": "snacks",
-      "name": "Aros de cebolla",
+      "id": "modelo",
+      "category": "bar",
+      "name": "Cerveza Modelo Especial",
       "description": "",
       "variants": [
         {
-          "name": "9 piezas",
-          "price": 11000
-        },
-        {
-          "name": "12 piezas",
-          "price": 12000
-        },
-        {
-          "name": "15 piezas",
-          "price": 13000
+          "name": "Regular",
+          "price": 5500
         }
       ],
       "available": true,
-      "page": 6
+      "page": 11
     },
     {
-      "id": "papas-casa",
-      "category": "snacks",
-      "name": "Papas de la casa",
-      "description": "Gratinadas con manchego, tocino y especias.",
+      "id": "mojito",
+      "category": "bar",
+      "name": "Mojito",
+      "description": "",
       "variants": [
         {
-          "name": "Francesa",
+          "name": "Frutal",
           "price": 11000
         },
         {
-          "name": "Gajo",
-          "price": 11500
+          "name": "Frapeado",
+          "price": 12000
         }
       ],
       "available": true,
-      "page": 6
+      "choices": [
+        {
+          "label": "Sabor",
+          "values": [
+            "Limón",
+            "Pepino",
+            "Mango",
+            "Fresa",
+            "Frutos rojos",
+            "Maracuyá"
+          ]
+        }
+      ],
+      "page": 12,
+      "image": "catalogo/mojito-a016a6d2b418"
     },
     {
       "id": "nachos",
@@ -723,46 +1572,28 @@
       "page": 7
     },
     {
-      "id": "papas",
-      "category": "snacks",
-      "name": "Papas a la francesa",
-      "description": "",
+      "id": "nortena",
+      "category": "pizzas",
+      "name": "Norteña",
+      "description": "Jamón, bistec, cebolla y morrón.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 8500
+          "name": "Personal",
+          "price": 16000
+        },
+        {
+          "name": "Grande",
+          "price": 28000
         }
       ],
       "available": true,
-      "page": 7
-    },
-    {
-      "id": "gajo",
-      "category": "snacks",
-      "name": "Papas gajo",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 9500
-        }
+      "image": "catalogo/nortena-a98a018b6fb9",
+      "page": 3,
+      "tags": [
+        "pizza",
+        "mozzarella"
       ],
-      "available": true,
-      "page": 7
-    },
-    {
-      "id": "raquet",
-      "category": "snacks",
-      "name": "Papas raquet",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 11000
-        }
-      ],
-      "available": true,
-      "page": 7
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
       "id": "nuggets",
@@ -779,9 +1610,81 @@
       "page": 7
     },
     {
-      "id": "poppers",
+      "id": "nuggets-kids",
+      "category": "infantil",
+      "name": "Nuggets kids",
+      "description": "Mini nuggets, papas a la francesa, jugo chico y regalo sorpresa.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 14900
+        }
+      ],
+      "available": true,
+      "page": 14
+    },
+    {
+      "id": "onion",
+      "category": "burgers",
+      "name": "Onion rings burger",
+      "description": "150 g de res, salsa BBQ, mozzarella y aros de cebolla.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 19000
+        }
+      ],
+      "available": true,
+      "page": 9,
+      "image": "catalogo/onion-5d48c970f781"
+    },
+    {
+      "id": "paloma",
+      "category": "bar",
+      "name": "Paloma tradicional",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 8500
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "pan-ajo",
+      "category": "pastas",
+      "name": "Pan de ajo",
+      "description": "Tapitas de pan artesanal perfumado con especias.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10500
+        }
+      ],
+      "available": true,
+      "page": 5
+    },
+    {
+      "id": "pan-gratinado",
+      "category": "pastas",
+      "name": "Pan de ajo gratinado",
+      "description": "Con especias y queso parmesano.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 12000
+        }
+      ],
+      "available": true,
+      "page": 5,
+      "image": "catalogo/pan-gratinado-0e45d1bc7353"
+    },
+    {
+      "id": "papas",
       "category": "snacks",
-      "name": "Chiles poppers",
+      "name": "Papas a la francesa",
       "description": "",
       "variants": [
         {
@@ -793,73 +1696,156 @@
       "page": 7
     },
     {
-      "id": "costillitas",
+      "id": "papas-casa",
       "category": "snacks",
-      "name": "Costillitas",
-      "description": "Bañadas en la salsa que elijas.",
+      "name": "Papas de la casa",
+      "description": "Gratinadas con manchego, tocino y especias.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 23000
+          "name": "Francesa",
+          "price": 11000
+        },
+        {
+          "name": "Gajo",
+          "price": 11500
         }
       ],
       "available": true,
-      "choices": [
-        {
-          "label": "Salsa",
-          "values": [
-            "Tamarindo habanero",
-            "Mango habanero",
-            "BBQ",
-            "Buffalo",
-            "Limón pimienta",
-            "Parmesano"
-          ]
-        }
-      ],
-      "page": 7
+      "page": 6,
+      "image": "catalogo/papas-casa-00869d36905a"
     },
     {
-      "id": "charola-mix",
-      "category": "snacks",
-      "name": "Charola mix",
-      "description": "Aros, dedos de queso, alitas, boneless, papas francesa y gajo, ranch y vegetales.",
+      "id": "pastor",
+      "category": "pizzas",
+      "name": "Pastor",
+      "description": "Pastor, piña, cebolla y cilantro.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 31000
+          "name": "Personal",
+          "price": 17500
+        },
+        {
+          "name": "Grande",
+          "price": 30000
         }
       ],
       "available": true,
-      "image": "mix",
-      "page": 8
+      "image": "catalogo/pastor-dfd5bdea57f2",
+      "page": 3,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "costillitas-mix",
-      "category": "snacks",
-      "name": "Costillitas mix",
-      "description": "Aros, dedos de queso, papas, guacamole y costillitas.",
+      "id": "pelon",
+      "category": "bebidas",
+      "name": "Chamoyada de Pelón",
+      "description": "Con paleta de Pelón Pelo Rico.",
       "variants": [
         {
           "name": "Regular",
-          "price": 35000
+          "price": 8500
         }
       ],
       "available": true,
-      "choices": [
+      "page": 11
+    },
+    {
+      "id": "peperoni",
+      "category": "pizzas",
+      "name": "Peperoni",
+      "description": "Peperoni y mozzarella.",
+      "variants": [
         {
-          "label": "Salsa de costillitas",
-          "values": [
-            "Tamarindo habanero",
-            "Mango habanero",
-            "BBQ",
-            "Buffalo",
-            "Limón pimienta",
-            "Parmesano"
-          ]
+          "name": "Personal",
+          "price": 15000
+        },
+        {
+          "name": "Grande",
+          "price": 26000
         }
       ],
-      "page": 8
+      "available": true,
+      "image": "pizza",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
+    },
+    {
+      "id": "perla",
+      "category": "bar",
+      "name": "Perla negra",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10500
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "pina-colada",
+      "category": "bar",
+      "name": "Piña colada",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 12000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "pink-colada",
+      "category": "bar",
+      "name": "Pink colada",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 13000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "pink-tonic",
+      "category": "bar",
+      "name": "Pink tonic",
+      "description": "",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 10500
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "pizza-kids",
+      "category": "infantil",
+      "name": "Pizza kids",
+      "description": "Pizza mini, papas a la francesa, jugo chico y regalo sorpresa.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 14900
+        }
+      ],
+      "available": true,
+      "image": "kids",
+      "page": 14
     },
     {
       "id": "pizza-mix",
@@ -899,225 +1885,8 @@
           ]
         }
       ],
-      "page": 8
-    },
-    {
-      "id": "cheese",
-      "category": "burgers",
-      "name": "Cheese burger",
-      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella y tocino.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 17000
-        }
-      ],
-      "available": true,
-      "image": "burger",
-      "page": 9
-    },
-    {
-      "id": "hawaiian",
-      "category": "burgers",
-      "name": "Hawaiian burger",
-      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella, tocino y piña.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 18000
-        }
-      ],
-      "available": true,
-      "page": 9
-    },
-    {
-      "id": "onion",
-      "category": "burgers",
-      "name": "Onion rings burger",
-      "description": "150 g de res, salsa BBQ, mozzarella y aros de cebolla.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 19000
-        }
-      ],
-      "available": true,
-      "page": 9
-    },
-    {
-      "id": "boneless-burger",
-      "category": "burgers",
-      "name": "Boneless burger",
-      "description": "150 g de res, lechuga, cebolla, jitomate, mozzarella y boneless.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 20000
-        }
-      ],
-      "available": true,
-      "page": 9,
-      "choices": [
-        {
-          "label": "Salsa de boneless",
-          "values": [
-            "Tamarindo habanero",
-            "Mango habanero",
-            "BBQ",
-            "Buffalo",
-            "Limón pimienta",
-            "Parmesano"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "crepa-sencilla",
-      "category": "postres",
-      "name": "Crepa o waffle sencillo",
-      "description": "Elige la base y tu sabor.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 9000
-        }
-      ],
-      "available": true,
-      "image": "crepa",
-      "choices": [
-        {
-          "label": "Base",
-          "values": [
-            "Crepa",
-            "Waffle"
-          ]
-        },
-        {
-          "label": "Sabor",
-          "values": [
-            "Nutella",
-            "Cajeta",
-            "Lechera",
-            "Fresa",
-            "Zarzamora",
-            "Hershey"
-          ]
-        }
-      ],
-      "page": 10
-    },
-    {
-      "id": "crepa-combinada",
-      "category": "postres",
-      "name": "Crepa o waffle combinado",
-      "description": "Nutella, Philadelphia, plátano, fresa, durazno y helados de vainilla o chocolate.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 11000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Base",
-          "values": [
-            "Crepa",
-            "Waffle"
-          ]
-        }
-      ],
-      "advisory": "Confirma tu combinación con el negocio por WhatsApp.",
-      "page": 10
-    },
-    {
-      "id": "crepa-salada",
-      "category": "postres",
-      "name": "Crepa o waffle salado",
-      "description": "Un antojo salado.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 9900
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Base",
-          "values": [
-            "Crepa",
-            "Waffle"
-          ]
-        },
-        {
-          "label": "Relleno",
-          "values": [
-            "Manchego con jamón",
-            "Philadelphia con jamón"
-          ]
-        }
-      ],
-      "page": 10
-    },
-    {
-      "id": "crepa-especial",
-      "category": "postres",
-      "name": "Crepa o waffle especial",
-      "description": "Crepizza, hawaiana o tropical.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 11000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Base",
-          "values": [
-            "Crepa",
-            "Waffle"
-          ]
-        },
-        {
-          "label": "Especialidad",
-          "values": [
-            "Crepizza",
-            "Hawaiana",
-            "Tropical"
-          ]
-        }
-      ],
-      "page": 10
-    },
-    {
-      "id": "waffle-especial",
-      "category": "postres",
-      "name": "Waffle especial",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 13000
-        }
-      ],
-      "available": true,
-      "page": 10
-    },
-    {
-      "id": "elote",
-      "category": "postres",
-      "name": "Pan de elote",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 7500
-        }
-      ],
-      "available": true,
-      "page": 10
+      "page": 8,
+      "image": "catalogo/pizza-mix-c7ad5cd229a2"
     },
     {
       "id": "platanos",
@@ -1134,131 +1903,47 @@
       "page": 10
     },
     {
-      "id": "duraznos",
-      "category": "postres",
-      "name": "Duraznos con lechera",
+      "id": "poppers",
+      "category": "snacks",
+      "name": "Chiles poppers",
       "description": "",
       "variants": [
         {
           "name": "Regular",
-          "price": 6000
+          "price": 8500
         }
       ],
       "available": true,
-      "page": 10
+      "page": 7
     },
     {
-      "id": "mini-pastel",
-      "category": "postres",
-      "name": "Mini pastel",
-      "description": "",
+      "id": "ranchera",
+      "category": "pizzas",
+      "name": "Ranchera",
+      "description": "Longaniza, champiñones, cebolla y serrano.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 15000
+          "name": "Personal",
+          "price": 16000
+        },
+        {
+          "name": "Grande",
+          "price": 28000
         }
       ],
       "available": true,
-      "page": 10
+      "image": "catalogo/ranchera-a87fdf5154b3",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "volcan",
-      "category": "postres",
-      "name": "Volcán de chocolate",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 12000
-        }
-      ],
-      "available": true,
-      "image": "postre",
-      "page": 10
-    },
-    {
-      "id": "vitrina",
-      "category": "postres",
-      "name": "Postres de vitrina",
-      "description": "Sujetos a disponibilidad.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 4000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Postre",
-          "values": [
-            "Carlota",
-            "Cheesecake Oreo",
-            "Flan en vaso",
-            "Tapioca",
-            "Gelatina"
-          ]
-        }
-      ],
-      "page": 10
-    },
-    {
-      "id": "capuccino",
-      "category": "bebidas",
-      "name": "Capuccino",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 6800
-        }
-      ],
-      "available": true,
-      "page": 10
-    },
-    {
-      "id": "americano",
-      "category": "bebidas",
-      "name": "Café americano",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 3500
-        }
-      ],
-      "available": true,
-      "page": 10
-    },
-    {
-      "id": "frappe",
-      "category": "bebidas",
-      "name": "Frappé sencillo",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 9000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Moka",
-            "Capuccino",
-            "Oreo",
-            "Mazapán"
-          ]
-        }
-      ],
-      "page": 10
-    },
-    {
-      "id": "frappe-especial",
-      "category": "bebidas",
-      "name": "Frappé especial",
+      "id": "raquet",
+      "category": "snacks",
+      "name": "Papas raquet",
       "description": "",
       "variants": [
         {
@@ -1267,18 +1952,25 @@
         }
       ],
       "available": true,
-      "choices": [
+      "page": 7
+    },
+    {
+      "id": "red",
+      "category": "bar",
+      "name": "Red Label",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
         {
-          "label": "Sabor",
-          "values": [
-            "Magnum",
-            "Mordisko",
-            "Ferrero",
-            "Kit Kat"
-          ]
+          "name": "Copa",
+          "price": 9500
+        },
+        {
+          "name": "Botella",
+          "price": 85000
         }
       ],
-      "page": 10
+      "available": false,
+      "page": 13
     },
     {
       "id": "refresco",
@@ -1289,130 +1981,6 @@
         {
           "name": "Regular",
           "price": 4000
-        }
-      ],
-      "available": true,
-      "page": 11
-    },
-    {
-      "id": "citrico",
-      "category": "bebidas",
-      "name": "Limonada o naranjada",
-      "description": "Natural o mineral.",
-      "variants": [
-        {
-          "name": "Natural",
-          "price": 6000
-        },
-        {
-          "name": "Mineral",
-          "price": 6500
-        },
-        {
-          "name": "Jarra natural",
-          "price": 18000
-        },
-        {
-          "name": "Jarra mineral",
-          "price": 25000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Limón",
-            "Naranja"
-          ]
-        }
-      ],
-      "page": 11
-    },
-    {
-      "id": "agua-sabor",
-      "category": "bebidas",
-      "name": "Agua fresca de sabor",
-      "description": "Consulta el sabor del día.",
-      "variants": [
-        {
-          "name": "Individual",
-          "price": 3000
-        },
-        {
-          "name": "Jarra",
-          "price": 12000
-        }
-      ],
-      "available": true,
-      "page": 11
-    },
-    {
-      "id": "agua",
-      "category": "bebidas",
-      "name": "Agua 600 ml",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 3000
-        }
-      ],
-      "available": true,
-      "page": 11
-    },
-    {
-      "id": "clamato",
-      "category": "bebidas",
-      "name": "Clamato preparado",
-      "description": "",
-      "variants": [
-        {
-          "name": "Chico",
-          "price": 7500
-        },
-        {
-          "name": "Grande",
-          "price": 12000
-        }
-      ],
-      "available": true,
-      "page": 11
-    },
-    {
-      "id": "chamoyada",
-      "category": "bebidas",
-      "name": "Chamoyada",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 7000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Fresa",
-            "Mango",
-            "Pepino",
-            "Piña"
-          ]
-        }
-      ],
-      "page": 11
-    },
-    {
-      "id": "pelon",
-      "category": "bebidas",
-      "name": "Chamoyada de Pelón",
-      "description": "Con paleta de Pelón Pelo Rico.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 8500
         }
       ],
       "available": true,
@@ -1437,61 +2005,9 @@
       "page": 11
     },
     {
-      "id": "malteada",
-      "category": "bebidas",
-      "name": "Malteada",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 6500
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Fresa",
-            "Chocolate"
-          ]
-        }
-      ],
-      "page": 11
-    },
-    {
-      "id": "cerveza",
+      "id": "sangria",
       "category": "bar",
-      "name": "Cerveza 355 ml",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 5000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Marca",
-          "values": [
-            "Corona",
-            "Victoria",
-            "Heineken",
-            "Tecate Light",
-            "Tecate Roja",
-            "Ultra",
-            "Indio",
-            "XX Lager"
-          ]
-        }
-      ],
-      "page": 11
-    },
-    {
-      "id": "mega",
-      "category": "bar",
-      "name": "Cerveza mega",
+      "name": "Sangría natural",
       "description": "",
       "variants": [
         {
@@ -1499,48 +2015,93 @@
           "price": 10000
         }
       ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Marca",
-          "values": [
-            "Corona",
-            "Victoria",
-            "XX Lager",
-            "Heineken",
-            "Tecate Light"
-          ]
-        }
-      ],
-      "page": 11
+      "available": false,
+      "page": 12
     },
     {
-      "id": "bohemia",
+      "id": "sangria-vino",
       "category": "bar",
-      "name": "Cerveza Bohemia",
-      "description": "",
+      "name": "Sangría con vino",
+      "description": "Foto orientativa: Bebida en copa. Asignación provisional.",
       "variants": [
         {
           "name": "Regular",
-          "price": 5500
+          "price": 15000
+        }
+      ],
+      "available": false,
+      "page": 12
+    },
+    {
+      "id": "smirnof",
+      "category": "bar",
+      "name": "Smirnof",
+      "description": "Las botellas incluyen cuatro mezcladores.",
+      "variants": [
+        {
+          "name": "Copa",
+          "price": 7000
+        },
+        {
+          "name": "Botella",
+          "price": 70000
+        }
+      ],
+      "available": false,
+      "page": 13
+    },
+    {
+      "id": "suprema",
+      "category": "pizzas",
+      "name": "Suprema",
+      "description": "Jamón, champiñones, cebolla, morrón y tocino.",
+      "variants": [
+        {
+          "name": "Personal",
+          "price": 16500
+        },
+        {
+          "name": "Grande",
+          "price": 29000
         }
       ],
       "available": true,
-      "page": 11
+      "image": "catalogo/suprema-e9d757ad509f",
+      "page": 3,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "modelo",
-      "category": "bar",
-      "name": "Cerveza Modelo Especial",
-      "description": "",
+      "id": "tapas-queso",
+      "category": "pastas",
+      "name": "Tapas de queso de cabra",
+      "description": "Seis tapitas de pan de ajo con queso de cabra.",
       "variants": [
         {
           "name": "Regular",
-          "price": 5500
+          "price": 11000
         }
       ],
       "available": true,
-      "page": 11
+      "page": 5
+    },
+    {
+      "id": "tapas-serrano",
+      "category": "pastas",
+      "name": "Tapas de jamón serrano",
+      "description": "Seis tapitas con queso de cabra y jamón serrano.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 15000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/tapas-serrano-89bf16240661",
+      "page": 5
     },
     {
       "id": "tarro",
@@ -1565,638 +2126,6 @@
       "page": 11
     },
     {
-      "id": "lambrusco",
-      "category": "bar",
-      "name": "Vino Lambrusco",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9500
-        },
-        {
-          "name": "Botella",
-          "price": 40000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "finca",
-      "category": "bar",
-      "name": "Vino Finca Las Moras",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 11000
-        },
-        {
-          "name": "Botella",
-          "price": 44100
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "casillero",
-      "category": "bar",
-      "name": "Vino Casillero del Diablo",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 12100
-        },
-        {
-          "name": "Botella",
-          "price": 50400
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-casa",
-      "category": "bar",
-      "name": "Clericot De la casa",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9000
-        },
-        {
-          "name": "Jarra",
-          "price": 35000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-rosado",
-      "category": "bar",
-      "name": "Clericot Rosado",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9500
-        },
-        {
-          "name": "Jarra",
-          "price": 36000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-rojos",
-      "category": "bar",
-      "name": "Clericot Frutos rojos",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 15000
-        },
-        {
-          "name": "Jarra",
-          "price": 40000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-lambrusco",
-      "category": "bar",
-      "name": "Clericot Lambrusco",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 14000
-        },
-        {
-          "name": "Jarra",
-          "price": 50000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-finca",
-      "category": "bar",
-      "name": "Clericot Finca Las Moras",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 14500
-        },
-        {
-          "name": "Jarra",
-          "price": 55000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "clericot-casilleros",
-      "category": "bar",
-      "name": "Clericot Casilleros",
-      "description": "",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 15500
-        },
-        {
-          "name": "Jarra",
-          "price": 60000
-        }
-      ],
-      "available": false,
-      "page": 11
-    },
-    {
-      "id": "margarita",
-      "category": "bar",
-      "name": "Margarita",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 12000
-        }
-      ],
-      "available": false,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Tradicional",
-            "Blue",
-            "Japonesa",
-            "Piña",
-            "Maracuyá",
-            "Pepino",
-            "Fresa"
-          ]
-        }
-      ],
-      "page": 12
-    },
-    {
-      "id": "pina-colada",
-      "category": "bar",
-      "name": "Piña colada",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 12000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "pink-colada",
-      "category": "bar",
-      "name": "Pink colada",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 13000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "baileys",
-      "category": "bar",
-      "name": "Baileys colado de la casa",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 12000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "coco",
-      "category": "bar",
-      "name": "Coco cielo",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 13000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "habana",
-      "category": "bar",
-      "name": "Luces de Habana",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 11000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "pink-tonic",
-      "category": "bar",
-      "name": "Pink tonic",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "bloody",
-      "category": "bar",
-      "name": "Blody Mary",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 11000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "carajillo",
-      "category": "bar",
-      "name": "Carajillo",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "paloma",
-      "category": "bar",
-      "name": "Paloma tradicional",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 8500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "sangria-vino",
-      "category": "bar",
-      "name": "Sangría con vino",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 15000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "sangria",
-      "category": "bar",
-      "name": "Sangría natural",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "alfonso",
-      "category": "bar",
-      "name": "Alfonso XIII",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "laguna",
-      "category": "bar",
-      "name": "Laguna azul",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "perla",
-      "category": "bar",
-      "name": "Perla negra",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "conga",
-      "category": "bar",
-      "name": "Conga",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "margarichelada",
-      "category": "bar",
-      "name": "Margarichelada",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 15000
-        }
-      ],
-      "available": false,
-      "page": 12
-    },
-    {
-      "id": "gintonic",
-      "category": "bar",
-      "name": "Gintonic frutal",
-      "description": "",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 10500
-        }
-      ],
-      "available": false,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Limón",
-            "Mandarina",
-            "Naranja",
-            "Pepino"
-          ]
-        }
-      ],
-      "page": 12
-    },
-    {
-      "id": "mojito",
-      "category": "bar",
-      "name": "Mojito",
-      "description": "",
-      "variants": [
-        {
-          "name": "Frutal",
-          "price": 11000
-        },
-        {
-          "name": "Frapeado",
-          "price": 12000
-        }
-      ],
-      "available": false,
-      "choices": [
-        {
-          "label": "Sabor",
-          "values": [
-            "Limón",
-            "Pepino",
-            "Mango",
-            "Fresa",
-            "Frutos rojos",
-            "Maracuyá"
-          ]
-        }
-      ],
-      "page": 12
-    },
-    {
-      "id": "jack",
-      "category": "bar",
-      "name": "Jack Daniels",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9000
-        },
-        {
-          "name": "Botella",
-          "price": 90000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "red",
-      "category": "bar",
-      "name": "Red Label",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9500
-        },
-        {
-          "name": "Botella",
-          "price": 85000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "bacardi",
-      "category": "bar",
-      "name": "Bacardí",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 7000
-        },
-        {
-          "name": "Botella",
-          "price": 70000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "smirnof",
-      "category": "bar",
-      "name": "Smirnof",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 7000
-        },
-        {
-          "name": "Botella",
-          "price": 70000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "absolut",
-      "category": "bar",
-      "name": "Absolut",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 9500
-        },
-        {
-          "name": "Botella",
-          "price": 95000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "azul",
-      "category": "bar",
-      "name": "Tequila Azul",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 7000
-        },
-        {
-          "name": "Botella",
-          "price": 70000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "cuervo",
-      "category": "bar",
-      "name": "Tequila José Cuervo",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 7500
-        },
-        {
-          "name": "Botella",
-          "price": 75000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "don-julio",
-      "category": "bar",
-      "name": "Don Julio 70",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 15000
-        },
-        {
-          "name": "Botella",
-          "price": 150000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "buchanans",
-      "category": "bar",
-      "name": "Buchanans 12",
-      "description": "Las botellas incluyen cuatro mezcladores.",
-      "variants": [
-        {
-          "name": "Copa",
-          "price": 13000
-        },
-        {
-          "name": "Botella",
-          "price": 130000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
       "id": "torres",
       "category": "bar",
       "name": "Torres 10",
@@ -2215,65 +2144,157 @@
       "page": 13
     },
     {
-      "id": "1800",
-      "category": "bar",
-      "name": "Tequila 1800",
-      "description": "Las botellas incluyen cuatro mezcladores.",
+      "id": "tres-quesos",
+      "category": "pizzas",
+      "name": "3 quesos",
+      "description": "Mozzarella, gouda, manchego y especias.",
       "variants": [
         {
-          "name": "Copa",
-          "price": 9500
+          "name": "Personal",
+          "price": 15500
         },
         {
-          "name": "Botella",
-          "price": 110000
-        }
-      ],
-      "available": false,
-      "page": 13
-    },
-    {
-      "id": "pizza-kids",
-      "category": "infantil",
-      "name": "Pizza kids",
-      "description": "Pizza mini, papas a la francesa, jugo chico y regalo sorpresa.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 14900
+          "name": "Grande",
+          "price": 27000
         }
       ],
       "available": true,
-      "image": "kids",
-      "page": 14
+      "image": "catalogo/tres-quesos-f45953e9f7d8",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "burger-kids",
-      "category": "infantil",
-      "name": "Mini burger",
-      "description": "Mini hamburguesa, papas a la francesa, jugo chico y regalo sorpresa.",
+      "id": "tropical",
+      "category": "pizzas",
+      "name": "Tropical",
+      "description": "Mozzarella, piña y jamón.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 14900
+          "name": "Personal",
+          "price": 15500
+        },
+        {
+          "name": "Grande",
+          "price": 27000
         }
       ],
       "available": true,
-      "page": 14
+      "image": "catalogo/tropical-3def1f0858b3",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     },
     {
-      "id": "nuggets-kids",
-      "category": "infantil",
-      "name": "Nuggets kids",
-      "description": "Mini nuggets, papas a la francesa, jugo chico y regalo sorpresa.",
+      "id": "vegetariana",
+      "category": "pizzas",
+      "name": "Vegetariana",
+      "description": "Piña, morrón, champiñones, cebolla y aceitunas negras.",
       "variants": [
         {
-          "name": "Regular",
-          "price": 14900
+          "name": "Personal",
+          "price": 15500
+        },
+        {
+          "name": "Grande",
+          "price": 27000
         }
       ],
       "available": true,
-      "page": 14
+      "image": "pizza",
+      "page": 2,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
+    },
+    {
+      "id": "vitrina",
+      "category": "postres",
+      "name": "Postres de vitrina",
+      "description": "Sujetos a disponibilidad. Foto orientativa: Postre de chocolate 01. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 4000
+        }
+      ],
+      "available": true,
+      "choices": [
+        {
+          "label": "Postre",
+          "values": [
+            "Carlota",
+            "Cheesecake Oreo",
+            "Flan en vaso",
+            "Tapioca",
+            "Gelatina"
+          ]
+        }
+      ],
+      "page": 10,
+      "image": "catalogo/vitrina-6c2173a0c849"
+    },
+    {
+      "id": "volcan",
+      "category": "postres",
+      "name": "Volcán de chocolate",
+      "description": "Foto orientativa: Postre de chocolate 02. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 12000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/volcan-57e2d4095232",
+      "page": 10
+    },
+    {
+      "id": "waffle-especial",
+      "category": "postres",
+      "name": "Waffle especial",
+      "description": "Foto orientativa: Waffle. Asignación provisional.",
+      "variants": [
+        {
+          "name": "Regular",
+          "price": 13000
+        }
+      ],
+      "available": true,
+      "page": 10,
+      "image": "catalogo/waffle-especial-0b4e6a287cfe"
+    },
+    {
+      "id": "yecapizza",
+      "category": "pizzas",
+      "name": "Yecapizza",
+      "description": "Cecina de Yecapixtla, serrano, aguacate y cebolla caramelizada.",
+      "variants": [
+        {
+          "name": "Personal",
+          "price": 17500
+        },
+        {
+          "name": "Grande",
+          "price": 30000
+        }
+      ],
+      "available": true,
+      "image": "catalogo/yecapizza-d2a992bd4839",
+      "page": 3,
+      "tags": [
+        "pizza",
+        "mozzarella"
+      ],
+      "baseDescription": "Con salsa de jitomate y mozzarella."
     }
   ],
   "categories": [
@@ -2315,8 +2336,8 @@
     },
     {
       "id": "bar",
-      "name": "Cervezas",
-      "subtitle": "Elige tu cerveza favorita.",
+      "name": "Cervezas y mojitos",
+      "subtitle": "Tu cerveza favorita o un mojito refrescante.",
       "icon": "cup"
     },
     {

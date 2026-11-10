@@ -1,5 +1,6 @@
 import { business, catalog, categories, pizzaExtras } from './catalog.mjs';
 import { publicDemo, assetUrl } from './environment.mjs';
+import demoMenu from './demo-menu.json' with { type: 'json' };
 
 export const shopSlug = () => {
   const match = globalThis.location?.pathname.match(/^\/b\/([a-z0-9-]{1,80})(?:\/|$)/);
@@ -40,6 +41,7 @@ export function hydrateMenu(data){
 }
 export async function refreshMenu(fetcher=globalThis.fetch){
   if(publicDemo){
+    hydrateMenu(demoMenu);
     Object.assign(business,{apiAvailable:false,acceptingOrders:false,testMode:true,publicDemo:true,whatsapp:'',bankDestination:null,tagline:'Explora, combina y arma tu pedido de prueba. Sin pagos ni envíos reales.'});
     return {config:business,products:catalog,categories,extras:pizzaExtras};
   }

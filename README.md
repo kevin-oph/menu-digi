@@ -125,3 +125,13 @@ La demo usa la ruta /menu-digi/ para GitHub Pages. `DEMO_BASE` permite otra ruta
 El workflow .github/workflows/pages.yml ejecuta pruebas, compila la demo y publica solo dist. En GitHub, Settings → Pages debe usar GitHub Actions. No subir dist, .env, bases, respaldos, dependencias ni fotos privadas de operación. GitHub Pages gratuito requiere repositorio público en GitHub Free; no cambiar la privacidad de un repositorio sin autorización. Esta demo de presentación no debe usarse para transacciones reales.
 
 El repositorio completo incluye frontend, backend, Docker, pruebas y documentación en docs. La subida y URL pública deben verificarse antes de compartirlas como disponibles. La autenticación de GitHub es independiente de la clave local del panel.
+
+## Catálogo público actualizado — 10 de noviembre de 2026
+
+La demo publica una instantánea revisada de la carta local: 80 productos disponibles, 39 fotos aprobadas y sección «Cervezas y mojitos». Mantiene selección de variantes, mitades, extras, carrito y resumen simulado. No incluye acceso administrativo, pagos ni registro real en servidor.
+
+La instantánea pública está en src/demo-menu.json y las fotos optimizadas en public/images/catalogo. Contiene solo campos públicos de catálogo y configuración visual; excluye datos bancarios, contactos privados, claves y pedidos. backend/seed.json conserva el catálogo completo de 119 productos con los artículos no ofrecidos desactivados, para instalaciones nuevas. Actualizar el seed no sobrescribe una base existente.
+
+Los archivos omitidos por el negocio (BURGER.jpg, PIZZA.jpg, CLERICOT.jpg, TARDES.jpg y cenas románticas) no se incorporaron. Tampoco se exportaron fotografías personales usadas para probar el administrador. Las fotos específicas sustituyen las asignaciones orientativas anteriores; las restantes conservan su advertencia provisional.
+
+Editar el administrador local no publica automáticamente en GitHub Pages: hay que revisar y exportar otra instantánea y sus recursos. La publicación incluye documentación acumulada del proyecto y mantiene separados los datos privados de operación.
