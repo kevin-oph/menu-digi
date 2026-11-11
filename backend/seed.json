@@ -66,7 +66,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/agua-sabor-3e81ada0953e"
     },
     {
       "id": "alfonso",
@@ -94,8 +96,9 @@
         }
       ],
       "available": true,
-      "image": "pasta",
-      "page": 4
+      "image": "catalogo/alfredo-98026e621a82",
+      "page": 4,
+      "photoKind": "illustrative"
     },
     {
       "id": "alitas",
@@ -125,7 +128,8 @@
         }
       ],
       "page": 6,
-      "image": "catalogo/alitas-3608509382ef"
+      "photoKind": "enhanced",
+      "image": "catalogo/alitas-1394cd5e310c"
     },
     {
       "id": "americano",
@@ -140,7 +144,8 @@
       ],
       "available": true,
       "page": 10,
-      "image": "catalogo/americano-aace0ce6071b"
+      "photoKind": "enhanced",
+      "image": "catalogo/americano-678f12ae0afc"
     },
     {
       "id": "aros",
@@ -163,7 +168,8 @@
       ],
       "available": true,
       "page": 6,
-      "image": "catalogo/aros-fbda016c1c5d"
+      "photoKind": "enhanced",
+      "image": "catalogo/aros-4ea03443ac80"
     },
     {
       "id": "azul",
@@ -241,7 +247,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/bohemia-f609fcac9a6b"
     },
     {
       "id": "bolognesa",
@@ -256,7 +264,8 @@
       ],
       "available": true,
       "page": 4,
-      "image": "catalogo/bolognesa-65e464aa3da7"
+      "photoKind": "enhanced",
+      "image": "catalogo/bolognesa-0a910353dc1a"
     },
     {
       "id": "boneless",
@@ -284,7 +293,8 @@
         }
       ],
       "page": 6,
-      "image": "catalogo/boneless-7f8330a12bd7"
+      "photoKind": "enhanced",
+      "image": "catalogo/boneless-5ec83a51b9a9"
     },
     {
       "id": "boneless-burger",
@@ -311,7 +321,9 @@
             "Parmesano"
           ]
         }
-      ]
+      ],
+      "photoKind": "illustrative",
+      "image": "catalogo/boneless-burger-3c5f44df111f"
     },
     {
       "id": "boneless-pizza",
@@ -329,13 +341,14 @@
         }
       ],
       "available": true,
-      "image": "catalogo/boneless-pizza-052f98b0e5f0",
+      "image": "catalogo/boneless-pizza-b1966e1c7ee8",
       "page": 3,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "enhanced"
     },
     {
       "id": "buchanans",
@@ -367,7 +380,9 @@
         }
       ],
       "available": true,
-      "page": 14
+      "page": 14,
+      "photoKind": "illustrative",
+      "image": "catalogo/burger-kids-3399b80cda3b"
     },
     {
       "id": "camarones",
@@ -391,7 +406,8 @@
         }
       ],
       "page": 4,
-      "image": "catalogo/camarones-4142c88573f2"
+      "photoKind": "enhanced",
+      "image": "catalogo/camarones-bce50936dcaf"
     },
     {
       "id": "capricciosa",
@@ -409,13 +425,14 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/capricciosa-2cb28f66fe8f",
       "page": 3,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "illustrative"
     },
     {
       "id": "capuccino",
@@ -430,7 +447,8 @@
       ],
       "available": true,
       "page": 10,
-      "image": "catalogo/capuccino-3b40ca7add23"
+      "photoKind": "enhanced",
+      "image": "catalogo/capuccino-938ae759f8cf"
     },
     {
       "id": "carajillo",
@@ -459,7 +477,8 @@
       ],
       "available": true,
       "page": 4,
-      "image": "catalogo/carbonara-4c3993e37d23"
+      "photoKind": "enhanced",
+      "image": "catalogo/carbonara-20fdffaf64a4"
     },
     {
       "id": "carnes-frias",
@@ -477,13 +496,14 @@
         }
       ],
       "available": true,
-      "image": "catalogo/carnes-frias-7bba5c12a134",
+      "image": "catalogo/carnes-frias-8bb7362f32dd",
       "page": 2,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "enhanced"
     },
     {
       "id": "casillero",
@@ -530,7 +550,9 @@
           ]
         }
       ],
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/cerveza-a9e3163a09d7"
     },
     {
       "id": "chamoyada",
@@ -621,7 +643,9 @@
           ]
         }
       ],
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/citrico-1992a1fa7644"
     },
     {
       "id": "clamato",
@@ -639,7 +663,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/clamato-9132b3d2e565"
     },
     {
       "id": "clericot-casa",
@@ -802,7 +828,9 @@
           ]
         }
       ],
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/costillitas-d34ad37aa70f"
     },
     {
       "id": "costillitas-mix",
@@ -853,7 +881,9 @@
           ]
         }
       ],
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/crepa-combinada-e442f2790ef0"
     },
     {
       "id": "crepa-especial",
@@ -884,7 +914,9 @@
           ]
         }
       ],
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/crepa-especial-c296df3f60c9"
     },
     {
       "id": "crepa-salada",
@@ -914,7 +946,9 @@
           ]
         }
       ],
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/crepa-salada-d6b38ace5c94"
     },
     {
       "id": "crepa-sencilla",
@@ -989,7 +1023,9 @@
         }
       ],
       "available": true,
-      "page": 6
+      "page": 6,
+      "photoKind": "illustrative",
+      "image": "catalogo/dedos-ec00ff955d10"
     },
     {
       "id": "don-julio",
@@ -1021,7 +1057,9 @@
         }
       ],
       "available": true,
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/duraznos-da294ce569cb"
     },
     {
       "id": "elote",
@@ -1061,7 +1099,9 @@
           ]
         }
       ],
-      "page": 4
+      "page": 4,
+      "photoKind": "illustrative",
+      "image": "catalogo/empanada-d929656adc61"
     },
     {
       "id": "empanadas-casa",
@@ -1075,8 +1115,9 @@
         }
       ],
       "available": true,
-      "image": "empanadas",
-      "page": 4
+      "image": "catalogo/empanadas-casa-365eee493c11",
+      "page": 4,
+      "photoKind": "illustrative"
     },
     {
       "id": "ensalada-chef",
@@ -1124,13 +1165,14 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/especial-80d27011d799",
       "page": 3,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "illustrative"
     },
     {
       "id": "extrema",
@@ -1253,7 +1295,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/gajo-4dfc91153711"
     },
     {
       "id": "gintonic",
@@ -1306,7 +1350,9 @@
         }
       ],
       "available": true,
-      "page": 9
+      "page": 9,
+      "photoKind": "illustrative",
+      "image": "catalogo/hawaiian-67f73e6a1f40"
     },
     {
       "id": "jack",
@@ -1379,7 +1425,9 @@
           ]
         }
       ],
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/malteada-86c4a613fdc8"
     },
     {
       "id": "margarichelada",
@@ -1447,7 +1495,9 @@
           ]
         }
       ],
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/mega-64df11942104"
     },
     {
       "id": "mexicana",
@@ -1485,7 +1535,9 @@
         }
       ],
       "available": true,
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/mini-pastel-5964bf8402fd"
     },
     {
       "id": "modelo",
@@ -1499,7 +1551,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/modelo-d6da2a2fe4c6"
     },
     {
       "id": "mojito",
@@ -1545,7 +1599,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/nachos-d11c24c3b8f4"
     },
     {
       "id": "nachos-carne",
@@ -1569,7 +1625,9 @@
           ]
         }
       ],
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/nachos-carne-fc8679040074"
     },
     {
       "id": "nortena",
@@ -1607,7 +1665,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/nuggets-65fe0f55c7ab"
     },
     {
       "id": "nuggets-kids",
@@ -1621,7 +1681,9 @@
         }
       ],
       "available": true,
-      "page": 14
+      "page": 14,
+      "photoKind": "illustrative",
+      "image": "catalogo/nuggets-kids-728c6376645b"
     },
     {
       "id": "onion",
@@ -1664,7 +1726,9 @@
         }
       ],
       "available": true,
-      "page": 5
+      "page": 5,
+      "photoKind": "illustrative",
+      "image": "catalogo/pan-ajo-2309dbc24494"
     },
     {
       "id": "pan-gratinado",
@@ -1693,7 +1757,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/papas-1337997fe79d"
     },
     {
       "id": "papas-casa",
@@ -1750,7 +1816,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/pelon-82ad07e210ab"
     },
     {
       "id": "peperoni",
@@ -1768,13 +1836,14 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/peperoni-e6f421fa2cd9",
       "page": 2,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "illustrative"
     },
     {
       "id": "perla",
@@ -1844,8 +1913,9 @@
         }
       ],
       "available": true,
-      "image": "kids",
-      "page": 14
+      "image": "catalogo/pizza-kids-9c00c44377b9",
+      "page": 14,
+      "photoKind": "illustrative"
     },
     {
       "id": "pizza-mix",
@@ -1900,7 +1970,9 @@
         }
       ],
       "available": true,
-      "page": 10
+      "page": 10,
+      "photoKind": "illustrative",
+      "image": "catalogo/platanos-dcb6cbe04422"
     },
     {
       "id": "poppers",
@@ -1914,7 +1986,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/poppers-88e7c2dd5d5e"
     },
     {
       "id": "ranchera",
@@ -1952,7 +2026,9 @@
         }
       ],
       "available": true,
-      "page": 7
+      "page": 7,
+      "photoKind": "illustrative",
+      "image": "catalogo/raquet-c1cf8b36528f"
     },
     {
       "id": "red",
@@ -1984,7 +2060,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/refresco-87b60a6e1a6b"
     },
     {
       "id": "rusa",
@@ -2002,7 +2080,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/rusa-1c8702bdb7e6"
     },
     {
       "id": "sangria",
@@ -2086,7 +2166,9 @@
         }
       ],
       "available": true,
-      "page": 5
+      "page": 5,
+      "photoKind": "illustrative",
+      "image": "catalogo/tapas-queso-5e42aba40641"
     },
     {
       "id": "tapas-serrano",
@@ -2183,13 +2265,14 @@
         }
       ],
       "available": true,
-      "image": "catalogo/tropical-3def1f0858b3",
+      "image": "catalogo/tropical-8ba3465e2b15",
       "page": 2,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "enhanced"
     },
     {
       "id": "vegetariana",

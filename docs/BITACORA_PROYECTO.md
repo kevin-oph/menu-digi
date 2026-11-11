@@ -343,3 +343,27 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Configuración exportada limitada a identidad visual y tiempos orientativos. Sin bancos, contactos privados, claves ni pedidos; excluidas fotos personales de pruebas y archivos omitidos.
 - Seed portable de 119 productos actualizado para nuevas instalaciones; no sobrescribe la base operativa existente.
 - 30 pruebas frontend y compilación de demo aprobadas. Documentación acumulada incorporada. La demo sigue siendo estática; no sincroniza futuras ediciones automáticamente.
+
+## 11 de noviembre de 2026 — Entrega de imágenes y cambio de alcance
+
+- Proyecto local iniciado con Docker. Auditoría de 80 productos visibles: 39 fotos aprobadas, dos fotos de pruebas y 39 productos sin foto verificada.
+- A solicitud del usuario se detuvo el retoque de imágenes existentes después de 11 resultados. Preparado paquete para otro agente con 28 originales pendientes, lista exacta de nombres, instrucciones detalladas y referencias terminadas. Los 11 ya retocados están expresamente excluidos de sus tareas.
+- Generadas 39 ilustraciones para productos sin foto, revisadas mediante cuatro hojas de contacto. Se entregan en ZIP separado; requieren confirmar presentaciones genéricas e ingredientes antes de su uso comercial.
+- Conservadas las fotografías originales. Estas imágenes NO se cargaron a la API ni se publicaron en GitHub Pages. No hubo push. Una prueba anterior de agua embotellada queda fuera del ZIP definitivo.
+- Código local preparado para distinguir fotos subidas, mejoradas e ilustrativas, mostrar su procedencia y ampliar la foto en el detalle del producto. 30 pruebas frontend, 32 API y compilación aprobadas; contenedores vigentes sin reconstruir para estos cambios.
+- Guía reutilizable y limitaciones: MEJORA_VISUAL_LOCAL/README.md y PAQUETE_RETOQUE_PENDIENTE/PROMPT_Y_PROCEDIMIENTO.md en outputs del espacio de trabajo.
+
+## 11 de noviembre de 2026 — Aplicación local de imágenes autorizada
+
+- Usuario autorizó incorporar las imágenes recreadas a la carta local. Cargadas 50 imágenes por API: 39 ilustraciones y 11 fotos reales mejoradas, con control de versión para cada producto.
+- Respaldo completo previo de PostgreSQL y medios en work/respaldo-antes-imagenes-20261111/20261111-010608-0f834b7c07734ead9c7608be1da33d45 (privado; contiene configuración sensible, no publicar).
+- Frontend y API reconstruidos con Docker y servicios saludables. La carta muestra «Imagen ilustrativa» para las 39 imágenes generadas y la procedencia en la ficha ampliada.
+- Verificados los 100 recursos de foto y miniatura. Comparación antes/después confirma precios, ingredientes, variantes, opciones, disponibilidad, configuración, categorías y demás productos sin cambios.
+- Revisada ficha Capricciosa en móvil: imagen visible y etiqueta correcta; aumentar cantidad mantiene abierto el producto y calcula dos piezas por $390.
+- Registro local y correspondencias en work/carga-imagenes-20261111/aplicadas.json; estados antes/después en la misma carpeta. No hubo publicación ni push a GitHub.
+
+## 11 de noviembre de 2026 — Preparación de publicación de nuevas imágenes
+
+- Exportada instantánea pública de 80 productos y 78 imágenes aprobadas, incluidas 39 ilustraciones y 11 retoques. Conservadas las etiquetas de procedencia y excluidas las dos fotografías personales de pruebas.
+- Configuración pública limitada a identidad visual y tiempos orientativos. Sin cuentas bancarias, contactos privados, claves, pedidos ni respaldos.
+- Verificadas correspondencias y existencia de los 78 archivos optimizados. 30 pruebas frontend y compilación de demo aprobadas. Publicación solicitada por el usuario mediante el workflow existente de GitHub Pages.

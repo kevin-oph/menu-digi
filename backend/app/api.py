@@ -5,6 +5,7 @@ import json
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Literal
 from uuid import UUID, uuid4
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
@@ -223,7 +224,7 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
         return {'data': data, 'version': body.expectedVersion+1}
 
     @app.post('/api/admin/{slug}/products/{product_id}/photo')
-    async def upload_photo(slug: str, product_id: str, expectedVersion: int, request: Request, authorization: str | None = Header(default=None), db=Depends(session)):
+    async def upload_photo(slug: str, product_id: str, expectedVersion: int, request: Request, kind: Literal['uploaded', 'enhanced', 'illustrative'] = 'uploaded', authorization: str | None = Header(default=None), db=Depends(session)):
         shop = await authorized(db, slug, authorization, lock=True)
         product = await db.get(Product, (shop.id, product_id))
         if not product or product.data.get('deleted'):
@@ -239,11 +240,11 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
         try:
             async with photo_gate:
                 photo, paths = await asyncio.to_thread(create_photo, bytes(content), media_root, shop.id)
-            data = {**product.data, **photo}
+            data = {**product.data, **photo, 'photoKind': kind}
             changed = await db.execute(update(Product).where(Product.shop_id == shop.id, Product.id == product_id, Product.version == expectedVersion).values(data=data, version=Product.version+1))
             if changed.rowcount != 1:
                 raise HTTPException(409, 'Otra edición cambió el producto. Recarga para revisar su foto.')
-            audit(db, shop, product_id, 'photo_updated', {'version': expectedVersion+1})
+            audit(db, shop, product_id, 'photo_updated', {'version': expectedVersion+1, 'photoKind': kind})
             await db.commit()
             return {'data': data, 'version': expectedVersion+1}
         except ValueError as exc:
@@ -259,7 +260,7 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
         product = await db.get(Product, (shop.id, product_id))
         if not product or product.data.get('deleted'):
             raise HTTPException(404, 'Producto no encontrado.')
-        data = {k:v for k,v in product.data.items() if k not in {'photoUrl', 'thumbnailUrl', 'image'}}
+        data = {k:v for k,v in product.data.items() if k not in {'photoUrl', 'thumbnailUrl', 'image', 'photoKind'}}
         changed = await db.execute(update(Product).where(Product.shop_id == shop.id, Product.id == product_id, Product.version == body.expectedVersion).values(data=data, version=Product.version+1))
         if changed.rowcount != 1:
             raise HTTPException(409, 'El producto cambió. Recarga antes de retirar su foto.')

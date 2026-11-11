@@ -135,3 +135,9 @@ La instantánea pública está en src/demo-menu.json y las fotos optimizadas en 
 Los archivos omitidos por el negocio (BURGER.jpg, PIZZA.jpg, CLERICOT.jpg, TARDES.jpg y cenas románticas) no se incorporaron. Tampoco se exportaron fotografías personales usadas para probar el administrador. Las fotos específicas sustituyen las asignaciones orientativas anteriores; las restantes conservan su advertencia provisional.
 
 Editar el administrador local no publica automáticamente en GitHub Pages: hay que revisar y exportar otra instantánea y sus recursos. La publicación incluye documentación acumulada del proyecto y mantiene separados los datos privados de operación.
+
+## Actualización visual — 11 de noviembre de 2026
+
+La instantánea pública conserva 80 productos e incluye 78 imágenes: las 50 imágenes incorporadas localmente (39 ilustraciones y 11 fotos retocadas), junto con 28 fotografías anteriores. Las ilustraciones se identifican en la carta y el detalle del producto. Las fotos personales de pruebas siguen excluidas. La demo mantiene pedidos simulados, sin pagos, acceso administrativo ni datos privados de operación.
+
+La actualización incluye fotos ampliadas en el detalle, procedencia de imágenes y documentación del procedimiento. Se comprobaron 30 pruebas frontend y la compilación de la demo antes de publicar. Las 32 pruebas API habían pasado durante la implementación del cambio de procedencia.

@@ -315,5 +315,21 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(stats['topProducts'][0]['name'],'Peperoni')
 
 
+    async def test_photo_origin_is_public_and_resets_on_manual_replacement(self):
+        image = io.BytesIO()
+        Image.new('RGB', (120, 120), (180, 90, 50)).save(image, format='PNG')
+        path = '/api/admin/pizzetas/products/peperoni/photo'
+        headers = {**self.auth, 'Content-Type': 'image/png'}
+        response = await self.client.post(path+'?expectedVersion=1&kind=illustrative', headers=headers, content=image.getvalue())
+        self.assertEqual(response.status_code, 200, response.text)
+        menu = (await self.client.get('/api/shops/pizzetas/menu')).json()
+        self.assertEqual(next(p for p in menu['products'] if p['id']=='peperoni')['photoKind'], 'illustrative')
+        invalid = await self.client.post(path+'?expectedVersion=2&kind=unknown', headers=headers, content=image.getvalue())
+        self.assertEqual(invalid.status_code, 422)
+        replaced = await self.client.post(path+'?expectedVersion=2', headers=headers, content=image.getvalue())
+        self.assertEqual(replaced.status_code, 200, replaced.text)
+        self.assertEqual(replaced.json()['data']['photoKind'], 'uploaded')
+
+
 if __name__ == '__main__':
     unittest.main()
