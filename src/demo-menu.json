@@ -800,7 +800,7 @@
       "id": "ensalada-chef",
       "category": "pastas",
       "name": "Ensalada del chef",
-      "description": "Lechugas, espinaca, pollo a la plancha, queso, crotones, manzana y semillas de girasol. Foto orientativa: Ensalada. Asignación provisional.",
+      "description": "Lechugas, espinaca, pollo a la plancha, queso, crotones, manzana y semillas de girasol.",
       "variants": [
         {
           "name": "Regular",
@@ -809,7 +809,8 @@
       ],
       "available": true,
       "page": 5,
-      "image": "catalogo/ensalada-chef-a61ecffcc0f6"
+      "photoKind": "uploaded",
+      "image": "catalogo/ensalada-chef-2641ce9f7546"
     },
     {
       "id": "ensalada-frutal",

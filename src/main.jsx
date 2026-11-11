@@ -58,9 +58,10 @@ function Stepper({ value, onChange, label = 'Cantidad' }) {
 }
 
 function ProductSheet({ product, onClose, onAdd, onContact }) {
-  const p = product;
+  const [firstId,setFirstId] = useState(product.buildHalves ? '' : product.id);
+  const p = catalog.find(x=>x.id===firstId) || product;
   const [variantIndex,setVariant] = useState(0);
-  const [halfMode,setHalfMode] = useState(false);
+  const [halfMode,setHalfMode] = useState(Boolean(product.buildHalves));
   const [halfId,setHalfId] = useState('');
   const [extras,setExtras] = useState([]);
   const [quantity,setQuantity] = useState(1);
@@ -69,29 +70,29 @@ function ProductSheet({ product, onClose, onAdd, onContact }) {
   const [error,setError] = useState('');
   const isPizza = p.category === 'pizzas';
   const config = { productId:p.id, productVersion:p.version||1, halfVersion:halfMode&&halfId?(catalog.find(x=>x.id===halfId)?.version||1):null, variantIndex, halfId:halfMode ? halfId : '', extras, quantity, selections, notes };
-  let unit = p.variants[variantIndex].price;
+  let unit = firstId ? p.variants[variantIndex].price : 0;
   if (halfMode && halfId) unit = Math.max(unit, catalog.find(x=>x.id===halfId).variants[variantIndex].price);
   unit += extras.length * 3000;
-  const add = e => { e.preventDefault(); if (halfMode && !halfId) { setError('Elige la segunda mitad.'); return; } try { quoteLine(config); onAdd(config); } catch(e) { setError(e.message); } };
-  return <Sheet title={p.name} onClose={onClose}>
+  const add = e => { e.preventDefault(); if (!firstId) { setError('Elige la primera mitad.'); return; } if (halfMode && !halfId) { setError('Elige la segunda mitad.'); return; } try { quoteLine(config); onAdd(config); } catch(e) { setError(e.message); } };
+  return <Sheet title={product.buildHalves ? 'Arma tu pizza' : p.name} onClose={onClose}>
     <form onSubmit={add} className="product-form">
       <div className="sheet-scroll">
-        {productPhoto(p)&&<figure className="product-detail-photo"><img src={p.photoUrl||productPhoto(p)} alt={p.name} width="800" height="800"/>{p.photoKind&&p.photoKind!=='uploaded'&&<figcaption>{p.photoKind==='illustrative'?'Imagen ilustrativa generada con IA. Presentación por confirmar.':'Foto real mejorada con IA. Presentación orientativa.'}</figcaption>}</figure>}
-        <p className="muted mb-5">{p.description} {p.baseDescription}</p>
-        {p.variants.length > 1 && <fieldset><legend>{isPizza ? '¿De qué tamaño?' : 'Elige tu presentación'}</legend><div className="choice-grid">{p.variants.map((v,i)=><label key={v.name} className={`choice ${variantIndex===i?'selected':''}`}><input type="radio" name="variant" checked={variantIndex===i} onChange={()=>setVariant(i)}/><span>{v.name}<small>{money(v.price)}</small></span>{variantIndex===i && <Check size={18}/>}</label>)}</div></fieldset>}
+        {firstId&&productPhoto(p)&&<figure className="product-detail-photo"><img src={p.photoUrl||productPhoto(p)} alt={p.name} width="800" height="800"/>{p.photoKind&&p.photoKind!=='uploaded'&&<figcaption>{p.photoKind==='illustrative'?'Imagen ilustrativa generada con IA. Presentación por confirmar.':'Foto real mejorada con IA. Presentación orientativa.'}</figcaption>}</figure>}
+        <p className="muted mb-5">{firstId ? <>{p.description} {p.baseDescription}</> : 'Elige tus dos especialidades favoritas. Tú decides ambas mitades.'}</p>
+        {p.variants.length > 1 && <fieldset><legend>{isPizza ? '¿De qué tamaño?' : 'Elige tu presentación'}</legend><div className="choice-grid">{p.variants.map((v,i)=><label key={v.name} className={`choice ${variantIndex===i?'selected':''}`}><input type="radio" name="variant" checked={variantIndex===i} onChange={()=>setVariant(i)}/><span>{v.name}{firstId&&<small>{money(halfMode&&halfId?Math.max(v.price,catalog.find(x=>x.id===halfId)?.variants[i]?.price||0):v.price)}</small>}</span>{variantIndex===i && <Check size={18}/>}</label>)}</div></fieldset>}
         {isPizza && <>
-          <fieldset><legend>Un sabor o dos favoritos</legend><div className="segmented"><button type="button" aria-pressed={!halfMode} className={!halfMode?'active':''} onClick={()=>setHalfMode(false)}>Completa</button><button type="button" aria-pressed={halfMode} className={halfMode?'active':''} onClick={()=>setHalfMode(true)}>Mitad y mitad</button></div>
-          {halfMode && <div className="mt-3"><label className="field-label" htmlFor="second-half">Primera mitad: {p.name}</label><select id="second-half" value={halfId} onChange={e=>setHalfId(e.target.value)} required><option value="">Elige la segunda mitad</option>{catalog.filter(x=>x.category==='pizzas' && x.id!==p.id && x.available).map(x=><option key={x.id} value={x.id}>{x.name} · {money(x.variants[variantIndex].price)}</option>)}</select><p className="help">Se cobra la especialidad de mayor precio.</p></div>}
+          <fieldset><legend>Un sabor o dos favoritos</legend><div className="segmented"><button type="button" aria-pressed={!halfMode} className={!halfMode?'active':''} onClick={()=>{setHalfMode(false);if(!firstId)setFirstId(product.id);}}>Completa</button><button type="button" aria-pressed={halfMode} className={halfMode?'active':''} onClick={()=>setHalfMode(true)}>Mitad y mitad</button></div>
+          {halfMode && <div className="mt-3"><label className="field-label" htmlFor="first-half">Primera mitad</label><select id="first-half" value={firstId} onChange={e=>{setFirstId(e.target.value);setSelections({});setError('');if(e.target.value===halfId)setHalfId('');}} required><option value="">Elige la primera mitad</option>{catalog.filter(x=>x.category==='pizzas' && x.available).map(x=><option key={x.id} value={x.id}>{x.name} · {money(x.variants[variantIndex].price)}</option>)}</select><label className="field-label mt-3" htmlFor="second-half">Segunda mitad</label><select id="second-half" value={halfId} onChange={e=>setHalfId(e.target.value)} required><option value="">Elige la segunda mitad</option>{catalog.filter(x=>x.category==='pizzas' && x.id!==firstId && x.available).map(x=><option key={x.id} value={x.id}>{x.name} · {money(x.variants[variantIndex].price)}</option>)}</select><p className="help">Se cobra la especialidad de mayor precio.</p></div>}
           </fieldset>
           <details className="extras"><summary><span>¿Un ingrediente extra?<small>+ $30 cada uno · en toda la pizza</small></span><Plus size={18}/></summary><div className="extras-list">{pizzaExtras.map(extra=><label key={extra}><input type="checkbox" checked={extras.includes(extra)} onChange={()=>setExtras(old=>old.includes(extra)?old.filter(x=>x!==extra):[...old,extra])}/><span>{extra}</span><small>+ $30</small></label>)}</div></details>
         </>}
-        {(p.choices || []).map(choice=><fieldset key={choice.label}><label className="field-label" htmlFor={`choice-${choice.label}`}>{choice.label}</label><select id={`choice-${choice.label}`} value={selections[choice.label] || ''} required onChange={e=>setSelections({...selections,[choice.label]:e.target.value})}><option value="">Elige una opción</option>{choice.values.map(v=><option key={v}>{v}</option>)}</select></fieldset>)}
+        {(firstId ? p.choices || [] : []).map(choice=><fieldset key={choice.label}><label className="field-label" htmlFor={`choice-${choice.label}`}>{choice.label}</label><select id={`choice-${choice.label}`} value={selections[choice.label] || ''} required onChange={e=>setSelections({...selections,[choice.label]:e.target.value})}><option value="">Elige una opción</option>{choice.values.map(v=><option key={v}>{v}</option>)}</select></fieldset>)}
         {p.advisory && <p className="notice"><Info size={17}/>{p.advisory}</p>}
         <label className="field-label" htmlFor="notes">¿Algo que debamos saber? <span className="optional">Opcional</span></label><textarea id="notes" maxLength={180} value={notes} onChange={e=>setNotes(e.target.value)} placeholder="Ej. sin cebolla. Para cambios especiales, consúltanos." rows={2}/>
         {isPizza && <button className="text-link mt-3" type="button" onClick={onContact}><MessageCircle size={16}/> ¿Una pizza muy a tu manera? Platiquemos.</button>}
         <p className="help mt-4">Los cambios escritos en notas están sujetos a confirmación. No sustituyen ingredientes extra.</p>
       </div>
-      <footer className="sheet-footer"><div className="w-full">{error && <p role="alert" className="error">{error}</p>}<div className="flex items-center gap-3"><Stepper value={quantity} onChange={setQuantity}/><button className="primary grow" type="submit">Agregar · {money(unit * quantity)}<Plus size={18}/></button></div></div></footer>
+      <footer className="sheet-footer"><div className="w-full">{error && <p role="alert" className="error">{error}</p>}<div className="flex items-center gap-3"><Stepper value={quantity} onChange={setQuantity}/><button className="primary grow" type="submit" disabled={!firstId||(halfMode&&!halfId)}>{!firstId||(halfMode&&!halfId)?'Elige tus especialidades':`Agregar · ${money(unit * quantity)}`}<Plus size={18}/></button></div></div></footer>
     </form>
   </Sheet>;
 }
@@ -281,7 +282,7 @@ function App({connectionError=''}) {
         const items=results.filter(p=>p.category===category.id);if(!items.length)return null;
         return <section className="menu-section" id={category.id} key={category.id} ref={el=>sections.current[category.id]=el}>
           <header className="section-heading"><div><h2>{category.name}<span>{items.length.toString().padStart(2,'0')}</span></h2><p>{category.subtitle}</p></div>{category.id==='pizzas'&&<span className="half-pill"><Pizza size={15}/>También mitad y mitad</span>}</header>
-          {category.id==='pizzas'&&<div className="pizza-feature"><div><span className="eyebrow">NO TIENES QUE ELEGIR SOLO UNA</span><h3>Dos mitades.<br/><em>Un gran antojo.</em></h3><p>Combina tus especialidades favoritas.<br/>Pagas la de mayor precio.</p><button className="text-link" onClick={()=>{setProduct(catalog.find(p=>p.category==='pizzas'&&p.available));setView('product');}}>Armar mi pizza<ArrowRight size={17}/></button></div><figure className="pizza-feature-photo"><img src={assetUrl("images/pizza-dos-mitades.png")} alt="Pizza artesanal de dos mitades: jamón con piña y quesos" loading="lazy" width="747" height="1087"/></figure><span className="feature-stamp">HECHA<br/><strong>A TU<br/>ANTOJO</strong></span></div>}
+          {category.id==='pizzas'&&<div className="pizza-feature"><div><span className="eyebrow">NO TIENES QUE ELEGIR SOLO UNA</span><h3>Dos mitades.<br/><em>Un gran antojo.</em></h3><p>Combina tus especialidades favoritas.<br/>Pagas la de mayor precio.</p><button className="text-link" onClick={()=>{setProduct({...catalog.find(p=>p.category==='pizzas'&&p.available),buildHalves:true});setView('product');}}>Armar mi pizza<ArrowRight size={17}/></button></div><figure className="pizza-feature-photo"><img src={assetUrl("images/pizza-dos-mitades.png")} alt="Pizza artesanal de dos mitades: jamón con piña y quesos" loading="lazy" width="747" height="1087"/></figure><span className="feature-stamp">HECHA<br/><strong>A TU<br/>ANTOJO</strong></span></div>}
           <div className="product-grid">{items.map(p=>{const Icon=icons[category.icon]||Utensils;const min=Math.min(...p.variants.map(v=>v.price));return <button className="product-card" key={p.id} onClick={()=>{setProduct(p);setView('product');}} aria-label={`Elegir ${p.name}, ${p.variants.length>1?'desde ':''}${money(min)}`}>
             <div className={`product-visual ${(p.photoUrl||(p.image&&p.image!=='pizza'))?'with-photo':''}`}>{p.photoUrl||(p.image&&p.image!=='pizza')?<img src={productPhoto(p)} alt="" loading="lazy" width="120" height="120"/>:<Icon strokeWidth={1.4} size={category.id==='pizzas'?30:27}/>}</div>
             <div className="product-copy"><h3>{p.name}</h3>{p.photoKind==='illustrative'&&<span className="illustrative-label">Imagen ilustrativa</span>}<p>{p.description || (p.variants.length>1?'Elige tu presentación.':'Agrégalo a tu pedido.')}</p><div className="product-price">{p.variants.length>1&&<span>Desde </span>}<strong>{money(min)}</strong>{p.category==='pizzas'&&<small>Personal · Grande</small>}</div></div><span className="add-circle"><Plus size={18}/></span>

@@ -367,3 +367,11 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Exportada instantánea pública de 80 productos y 78 imágenes aprobadas, incluidas 39 ilustraciones y 11 retoques. Conservadas las etiquetas de procedencia y excluidas las dos fotografías personales de pruebas.
 - Configuración pública limitada a identidad visual y tiempos orientativos. Sin cuentas bancarias, contactos privados, claves, pedidos ni respaldos.
 - Verificadas correspondencias y existencia de los 78 archivos optimizados. 30 pruebas frontend y compilación de demo aprobadas. Publicación solicitada por el usuario mediante el workflow existente de GitHub Pages.
+
+## 11 de noviembre de 2026 — Ensalada del chef y elección libre de mitades
+
+- Sustituida Ensalada del chef por la foto original adjunta por el usuario, sin regeneración. Retirado el aviso anterior de asignación provisional; precios y receta conservados. Estado previo en work/ensalada-chef-20261111 (fuera del repositorio).
+- El botón «Armar mi pizza» abre «Mitad y mitad» con primera y segunda especialidad sin preseleccionar. Ambas son editables; solo aparecen pizzas disponibles y no se permite agregar hasta elegir ambas. Desde una ficha individual se conserva su especialidad inicial, pero la primera mitad también puede cambiarse.
+- Si la primera especialidad se cambia a la que estaba elegida como segunda, se solicita nuevamente la segunda. El precio por tamaño refleja la mitad más cara, y extras/cantidad mantienen su cálculo habitual.
+- Verificado en navegador local: Peperoni + Capricciosa personal $195; grande $320; dos grandes $640, con ambas especialidades en carrito y anticipo $320. Botón bloqueado antes de elegir. Nueva foto y descripción de ensalada comprobadas en la ficha.
+- 30 pruebas frontend y compilación de demo aprobadas. Contenedores Docker locales reconstruidos. Exportación pública conserva 80 productos y 78 fotos, sin datos privados. Publicación en Pages autorizada por el usuario.
