@@ -390,3 +390,10 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Exportada instantánea pública con 80 productos y 80 imágenes aprobadas, incluidas Vegetariana, Ciel, Corona/Victoria/XX y la Mega corregida. Conservadas otras marcas y precios. Exportación por lista de campos públicos; sin configuración bancaria, WhatsApp privado, dirección privada, pedidos ni claves.
 - El encuadre contiene las botellas completas. Archivo maestro y prompt en outputs/IMAGENES_20261112/mega-corona-12l.png y prompt-corona-mega.txt.
 - Aclarado alcance operativo: la demo de Pages simula pedidos; la app local tiene configuración guardada, pero continúa en modo de prueba y con recepción pausada. Para operar por internet se requiere alojamiento de API/base y validación del flujo real, además de confirmar datos definitivos. Impresión de cocina sigue pendiente de equipo.
+
+## 12 de noviembre de 2026 — Corrección de postres
+
+- Usuario identificó la fotografía de Postres de vitrina como Volcán de chocolate. Reasignada por API al volcán y retirada la ficha de vitrina mediante eliminación lógica, conservando respaldo e historial.
+- Waffle especial sustituido por la imagen adjunta del usuario, sin regeneración. Retirados avisos de asignación provisional de volcán y waffle.
+- Precios conservados: Volcán $120 y Waffle especial $130. Comparación verifica opciones, disponibilidad y demás productos intactos. Cuatro recursos de foto/miniatura comprobados.
+- Estados y fotos anteriores guardados en work/postres-20261112 fuera del repositorio. Instantánea pública actualizada: 79 productos y 79 fotos; sin datos privados. Publicación solicitada por el usuario.

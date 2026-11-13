@@ -1657,37 +1657,10 @@
       "photoKind": "illustrative"
     },
     {
-      "id": "vitrina",
-      "category": "postres",
-      "name": "Postres de vitrina",
-      "description": "Sujetos a disponibilidad. Foto orientativa: Postre de chocolate 01. Asignación provisional.",
-      "variants": [
-        {
-          "name": "Regular",
-          "price": 4000
-        }
-      ],
-      "available": true,
-      "choices": [
-        {
-          "label": "Postre",
-          "values": [
-            "Carlota",
-            "Cheesecake Oreo",
-            "Flan en vaso",
-            "Tapioca",
-            "Gelatina"
-          ]
-        }
-      ],
-      "page": 10,
-      "image": "catalogo/vitrina-6c2173a0c849"
-    },
-    {
       "id": "volcan",
       "category": "postres",
       "name": "Volcán de chocolate",
-      "description": "Foto orientativa: Postre de chocolate 02. Asignación provisional.",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
@@ -1695,14 +1668,15 @@
         }
       ],
       "available": true,
-      "image": "catalogo/volcan-57e2d4095232",
-      "page": 10
+      "image": "catalogo/volcan-36f125d39647",
+      "page": 10,
+      "photoKind": "uploaded"
     },
     {
       "id": "waffle-especial",
       "category": "postres",
       "name": "Waffle especial",
-      "description": "Foto orientativa: Waffle. Asignación provisional.",
+      "description": "",
       "variants": [
         {
           "name": "Regular",
@@ -1711,7 +1685,8 @@
       ],
       "available": true,
       "page": 10,
-      "image": "catalogo/waffle-especial-0b4e6a287cfe"
+      "photoKind": "uploaded",
+      "image": "catalogo/waffle-especial-e65145ad11db"
     },
     {
       "id": "yecapizza",
