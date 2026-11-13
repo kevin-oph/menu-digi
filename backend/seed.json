@@ -48,7 +48,9 @@
         }
       ],
       "available": true,
-      "page": 11
+      "page": 11,
+      "photoKind": "illustrative",
+      "image": "catalogo/agua-ec715d45b2a7"
     },
     {
       "id": "agua-sabor",
@@ -552,7 +554,7 @@
       ],
       "page": 11,
       "photoKind": "illustrative",
-      "image": "catalogo/cerveza-a9e3163a09d7"
+      "image": "catalogo/cerveza-fceb095179a8"
     },
     {
       "id": "chamoyada",
@@ -1498,7 +1500,7 @@
       ],
       "page": 11,
       "photoKind": "illustrative",
-      "image": "catalogo/mega-64df11942104"
+      "image": "catalogo/mega-34e86e8b7d21"
     },
     {
       "id": "mexicana",
@@ -2291,13 +2293,14 @@
         }
       ],
       "available": true,
-      "image": "pizza",
+      "image": "catalogo/vegetariana-3ee0b9dafeed",
       "page": 2,
       "tags": [
         "pizza",
         "mozzarella"
       ],
-      "baseDescription": "Con salsa de jitomate y mozzarella."
+      "baseDescription": "Con salsa de jitomate y mozzarella.",
+      "photoKind": "illustrative"
     },
     {
       "id": "vitrina",

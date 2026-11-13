@@ -375,3 +375,18 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Si la primera especialidad se cambia a la que estaba elegida como segunda, se solicita nuevamente la segunda. El precio por tamaño refleja la mitad más cara, y extras/cantidad mantienen su cálculo habitual.
 - Verificado en navegador local: Peperoni + Capricciosa personal $195; grande $320; dos grandes $640, con ambas especialidades en carrito y anticipo $320. Botón bloqueado antes de elegir. Nueva foto y descripción de ensalada comprobadas en la ficha.
 - 30 pruebas frontend y compilación de demo aprobadas. Contenedores Docker locales reconstruidos. Exportación pública conserva 80 productos y 78 fotos, sin datos privados. Publicación en Pages autorizada por el usuario.
+
+## 12 de noviembre de 2026 — Vegetariana, cervezas y agua Ciel
+
+- Generadas con herramienta integrada y aplicadas localmente cuatro imágenes ilustrativas: Vegetariana con ingredientes de la carta, Corona/Victoria/XX para cerveza de 355 ml, Corona como ejemplo de cerveza mega y agua Ciel de 600 ml. Fondo beige cálido y encuadre de producto coherentes con el resto de la carta.
+- El usuario confirmó conservar también las demás marcas: Bohemia, Modelo y todas las opciones de selección permanecen intactas, al igual que precios, variantes, disponibilidad y recetas.
+- Respaldo de estado y recursos anteriores en work/imagenes-20261112; archivos finales y prompts en outputs/IMAGENES_20261112. Carga por API con control de versión; cuatro fotos y cuatro miniaturas comprobadas.
+- Ajustado object-fit a contain en detalle de producto y miniaturas de bebidas para evitar recortar tapas o etiquetas. Compilación Docker aprobada; servicios saludables. Revisión visual en navegador de vegetariana, cerveza con opciones de marca y agua Ciel.
+- Sin publicación ni push en esta sesión. Las imágenes están disponibles en la carta local; GitHub Pages conserva la última publicación anterior.
+
+## 12 de noviembre de 2026 — Corona Mega 1.2 L y publicación de fotos pendientes
+
+- Recreada Corona Mega usando la referencia suministrada: botella ámbar, etiqueta amarilla, texto rojo Mega y contenido 1.2 L; fondo beige cálido, sin paneles publicitarios. Sustituida la imagen local por API con control de versión; precio y opciones intactos. Respaldo en work/corona-mega-12l.
+- Exportada instantánea pública con 80 productos y 80 imágenes aprobadas, incluidas Vegetariana, Ciel, Corona/Victoria/XX y la Mega corregida. Conservadas otras marcas y precios. Exportación por lista de campos públicos; sin configuración bancaria, WhatsApp privado, dirección privada, pedidos ni claves.
+- El encuadre contiene las botellas completas. Archivo maestro y prompt en outputs/IMAGENES_20261112/mega-corona-12l.png y prompt-corona-mega.txt.
+- Aclarado alcance operativo: la demo de Pages simula pedidos; la app local tiene configuración guardada, pero continúa en modo de prueba y con recepción pausada. Para operar por internet se requiere alojamiento de API/base y validación del flujo real, además de confirmar datos definitivos. Impresión de cocina sigue pendiente de equipo.
