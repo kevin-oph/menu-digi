@@ -29,6 +29,7 @@ services:
       DATABASE_URL: postgresql+asyncpg://pizzetas:${POSTGRES_PASSWORD:?Ejecuta el script configure-local primero}@database:5432/pizzetas
       APP_SECRET: ${APP_SECRET:?Configura APP_SECRET}
       ADMIN_TOKEN: ${ADMIN_TOKEN:?Configura ADMIN_TOKEN}
+      ADMIN_REQUIRE_SESSION: ${ADMIN_REQUIRE_SESSION:-false}
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true

@@ -1,6 +1,8 @@
 import asyncio
+from datetime import datetime, timedelta, timezone
 import copy
 import io
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,7 +14,7 @@ from sqlalchemy import select
 
 from app.api import create_app
 from app.domain import digest
-from app.models import AuditEvent, Order, Shop
+from app.models import AdminSession, AuditEvent, Order, Shop
 
 
 class ApiTests(unittest.IsolatedAsyncioTestCase):
@@ -44,7 +46,7 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
     async def test_public_menu_has_bank_details_but_no_admin_secret(self):
         r = await self.client.get('/api/shops/pizzetas/menu')
         self.assertEqual(r.status_code, 200)
-        self.assertEqual(len(r.json()['products']), 119)
+        self.assertEqual(len(r.json()['products']), len(json.loads((Path(__file__).parents[1]/'seed.json').read_text(encoding='utf-8'))['products']))
         self.assertNotIn(self.token, r.text)
         self.assertNotIn('admin_hash', r.text)
 
@@ -329,6 +331,75 @@ class ApiTests(unittest.IsolatedAsyncioTestCase):
         replaced = await self.client.post(path+'?expectedVersion=2', headers=headers, content=image.getvalue())
         self.assertEqual(replaced.status_code, 200, replaced.text)
         self.assertEqual(replaced.json()['data']['photoKind'], 'uploaded')
+
+
+    async def test_managed_choices_validate_orders_preserve_history_and_detect_stale_edits(self):
+        meta=(await self.client.get('/api/admin/pizzetas/categories',headers=self.auth)).json()
+        body={'expectedCatalogVersion':meta['version'],'category':'snacks','name':'Prueba de salsas','description':'','available':True,'variants':[{'name':'Regular','price':10000}],'choices':[{'label':' Salsa ','values':[' BBQ ','Búfalo']}]}
+        r=await self.client.post('/api/admin/pizzetas/products',headers=self.auth,json=body)
+        self.assertEqual(r.status_code,201,r.text)
+        p=r.json()['data'];pid=p['id'];path='/api/admin/pizzetas/products/'+pid
+        self.assertEqual(p['choices'],[{'label':'Salsa','values':['BBQ','Búfalo']}])
+        payload=copy.deepcopy(self.payload);payload['expectedTotal']=10000;payload['items'][0].update(productId=pid,selections={})
+        self.assertEqual((await self.create(payload=payload)).status_code,422)
+        payload['items'][0]['selections']={'Salsa':'BBQ'}
+        order=await self.create(payload=payload);self.assertEqual(order.status_code,201,order.text);order=order.json()
+        update={k:p[k] for k in ['name','description','available','variants']};update['expectedVersion']=1
+        kept=await self.client.put(path,headers=self.auth,json=update)
+        self.assertEqual(kept.status_code,200,kept.text);self.assertEqual(kept.json()['data']['choices'],p['choices'])
+        update.update(expectedVersion=2,choices=[])
+        removed=await self.client.put(path,headers=self.auth,json=update)
+        self.assertEqual(removed.status_code,200,removed.text);self.assertEqual(removed.json()['data']['choices'],[])
+        self.assertEqual((await self.client.put(path,headers=self.auth,json=update)).status_code,409)
+        self.assertEqual((await self.create(payload=payload)).status_code,409)
+        historical=await self.client.get('/api/orders/'+order['id'],headers={'Authorization':'Bearer '+order['accessToken']})
+        self.assertIn('Salsa: BBQ',historical.text)
+
+    async def test_managed_choices_reject_ambiguous_values_without_changing_product(self):
+        rows=(await self.client.get('/api/admin/pizzetas/products',headers=self.auth)).json()
+        p=next(p['data'] for p in rows if p['data']['id']=='peperoni')
+        body={k:p[k] for k in ['name','description','available','variants']};body['expectedVersion']=1
+        invalid=[[{'label':'Salsa','values':['BBQ',' bbq ']}],[{'label':' ','values':['BBQ']}],[{'label':'Salsa','values':['']}],[{'label':'Salsa','values':[]}],[{'label':'Salsa','values':['x'*81]}],[{'label':'Salsa','values':['BBQ']},{'label':' salsa ','values':['Búfalo']}]]
+        for choices in invalid:
+            r=await self.client.put('/api/admin/pizzetas/products/peperoni',headers=self.auth,json={**body,'choices':choices})
+            self.assertEqual(r.status_code,422,r.text)
+        menu=(await self.client.get('/api/shops/pizzetas/menu')).json()
+        current=next(p for p in menu['products'] if p['id']=='peperoni')
+        self.assertEqual(current['version'],1)
+
+
+    async def test_session_login_expiry_logout_and_business_scope(self):
+        login=await self.client.post('/api/admin/pizzetas/session',json={'key':self.token})
+        self.assertEqual(login.status_code,200,login.text)
+        self.assertIn('no-store',login.headers['cache-control'])
+        token=login.json()['token'];auth={'Authorization':'Bearer '+token}
+        self.assertNotEqual(token,self.token)
+        self.assertEqual((await self.client.get('/api/admin/pizzetas/config',headers=auth)).status_code,200)
+        async with self.app.state.sessions.begin() as db:
+            db.add(Shop(id=str(uuid4()),slug='sesion-ajena',config=self.config['config'],categories=[],extras=[],admin_hash=digest('another-'+'z'*40),version=1))
+        self.assertEqual((await self.client.get('/api/admin/sesion-ajena/config',headers=auth)).status_code,401)
+        self.assertEqual((await self.client.delete('/api/admin/pizzetas/session',headers=auth)).status_code,200)
+        self.assertEqual((await self.client.get('/api/admin/pizzetas/config',headers=auth)).status_code,401)
+        again=(await self.client.post('/api/admin/pizzetas/session',json={'key':self.token})).json()['token']
+        async with self.app.state.sessions.begin() as db:
+            session=await db.get(AdminSession,digest(again))
+            session.expires_at=datetime.now(timezone.utc)-timedelta(seconds=1)
+        self.assertEqual((await self.client.get('/api/admin/pizzetas/config',headers={'Authorization':'Bearer '+again})).status_code,401)
+
+    async def test_session_login_throttles_invalid_keys(self):
+        for _ in range(5):
+            r=await self.client.post('/api/admin/pizzetas/session',json={'key':'incorrecta'})
+            self.assertEqual(r.status_code,401)
+        r=await self.client.post('/api/admin/pizzetas/session',json={'key':self.token})
+        self.assertEqual(r.status_code,429);self.assertEqual(r.headers['retry-after'],'900')
+
+    async def test_production_requires_session_and_persisted_session_survives_new_app(self):
+        token=(await self.client.post('/api/admin/pizzetas/session',json={'key':self.token})).json()['token']
+        prod=create_app(database_url=str(self.app.state.engine.url),secret='local-test-secret-'+'s'*40,admin_token=self.token,media_root=Path(self.tmp.name)/'media',require_admin_session=True)
+        async with prod.router.lifespan_context(prod):
+            async with httpx.AsyncClient(transport=httpx.ASGITransport(app=prod),base_url='http://testserver') as client:
+                self.assertEqual((await client.get('/api/admin/pizzetas/config',headers=self.auth)).status_code,401)
+                self.assertEqual((await client.get('/api/admin/pizzetas/config',headers={'Authorization':'Bearer '+token})).status_code,200)
 
 
 if __name__ == '__main__':

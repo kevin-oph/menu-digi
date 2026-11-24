@@ -7,6 +7,10 @@ class StrictModel(BaseModel):
     model_config = ConfigDict(extra='forbid', populate_by_name=True)
 
 
+class AdminLogin(StrictModel):
+    key: str = Field(min_length=1, max_length=256)
+
+
 class BankDestination(StrictModel):
     bank: str = Field(min_length=2, max_length=80)
     holder: str = Field(min_length=3, max_length=120)
@@ -66,7 +70,40 @@ class Variant(StrictModel):
     price: Annotated[int, Field(strict=True, ge=100, le=10000000)]
 
 
-class ProductUpdate(StrictModel):
+class ProductChoice(StrictModel):
+    label: str = Field(min_length=1, max_length=80)
+    values: list[str] = Field(min_length=1, max_length=30)
+
+    @field_validator('label', mode='before')
+    @classmethod
+    def clean_label(cls, value):
+        if not isinstance(value, str) or '\n' in value or '\r' in value:
+            raise ValueError('Escribe un nombre de opción en una sola línea.')
+        return value.strip()
+
+    @field_validator('values')
+    @classmethod
+    def clean_values(cls, values):
+        cleaned = [v.strip() for v in values]
+        if any(not v or len(v) > 80 or '\n' in v or '\r' in v for v in cleaned):
+            raise ValueError('Escribe opciones de 1 a 80 caracteres, sin líneas vacías.')
+        if len({v.casefold() for v in cleaned}) != len(cleaned):
+            raise ValueError('No repitas valores dentro de una opción.')
+        return cleaned
+
+
+class ProductOptions(StrictModel):
+    choices: list[ProductChoice] = Field(default_factory=list, max_length=12)
+
+    @field_validator('choices')
+    @classmethod
+    def unique_labels(cls, choices):
+        if len({c.label.casefold() for c in choices}) != len(choices):
+            raise ValueError('Cada grupo de opciones debe tener un nombre distinto.')
+        return choices
+
+
+class ProductUpdate(ProductOptions):
     expectedVersion: int = Field(ge=1)
     name: str = Field(min_length=2, max_length=100)
     description: str = Field(max_length=600)
@@ -74,7 +111,7 @@ class ProductUpdate(StrictModel):
     variants: list[Variant] = Field(min_length=1, max_length=12)
 
 
-class ProductCreate(StrictModel):
+class ProductCreate(ProductOptions):
     expectedCatalogVersion: int = Field(ge=1)
     category: str = Field(min_length=1, max_length=80)
     name: str = Field(min_length=2, max_length=100)

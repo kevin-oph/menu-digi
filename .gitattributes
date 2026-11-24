@@ -4,3 +4,4 @@
 Dockerfile text eol=lf
 *.webp binary
 *.png binary
+deploy/Caddyfile text eol=lf

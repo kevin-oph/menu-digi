@@ -1,8 +1,11 @@
 import asyncio
-from collections import Counter
+from collections import Counter, OrderedDict
+from datetime import datetime, timedelta, timezone
 import hmac
 import json
 import os
+import secrets
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Literal
@@ -11,20 +14,21 @@ from uuid import UUID, uuid4
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy import event, select, update
+from sqlalchemy import delete, event, select, update
 from sqlalchemy.exc import IntegrityError, OperationalError
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from .domain import access_token, digest, order_message, quote, request_hash
-from .models import AuditEvent, Base, Order, Product, SchemaRevision, Shop
-from .schemas import BusinessConfig, CategoryChange, ConfigUpdate, ConfirmInput, OrderInput, ProductCreate, ProductUpdate, SettleInput, StatusInput, VersionInput
+from .models import AdminSession, AuditEvent, Base, Order, Product, SchemaRevision, Shop
+from .schemas import AdminLogin, BusinessConfig, CategoryChange, ConfigUpdate, ConfirmInput, OrderInput, ProductCreate, ProductUpdate, SettleInput, StatusInput, VersionInput
 from .media import MAX_BYTES, create_photo, remove_created
 
 
-def create_app(database_url=None, secret=None, admin_token=None, seed_path=None, media_root=None):
+def create_app(database_url=None, secret=None, admin_token=None, seed_path=None, media_root=None, require_admin_session=None):
     database_url = database_url or os.environ.get('DATABASE_URL', 'sqlite+aiosqlite:///./pizzetas-local.db')
     secret = secret or os.environ.get('APP_SECRET', '')
     admin_token = admin_token or os.environ.get('ADMIN_TOKEN', '')
+    require_admin_session = require_admin_session if require_admin_session is not None else os.environ.get('ADMIN_REQUIRE_SESSION', 'false').lower() == 'true'
     seed_path = Path(seed_path or Path(__file__).parent.parent / 'seed.json')
     media_root = Path(media_root or os.environ.get('MEDIA_ROOT', str(Path(__file__).parent.parent / '.local' / 'media'))).resolve()
     engine = create_async_engine(database_url, pool_pre_ping=True)
@@ -66,6 +70,7 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
     app.state.engine, app.state.sessions = engine, sessions
     app.state.media_root = media_root
     photo_gate = asyncio.Semaphore(1)
+    login_attempts = OrderedDict()
     app.mount('/media', StaticFiles(directory=media_root, check_dir=False), name='media')
 
     @app.exception_handler(OperationalError)
@@ -86,9 +91,44 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
     async def authorized(db, slug, authorization, lock=False):
         shop = await shop_by_slug(db, slug, lock)
         token = authorization[7:] if authorization and authorization.startswith('Bearer ') else ''
-        if not token or not hmac.compare_digest(digest(token), shop.admin_hash):
+        if token and not require_admin_session and hmac.compare_digest(digest(token), shop.admin_hash):
+            return shop
+        login = await db.get(AdminSession, digest(token)) if token else None
+        if not login or login.shop_id != shop.id or login.expires_at.replace(tzinfo=timezone.utc) <= datetime.now(timezone.utc):
             raise HTTPException(401, 'Acceso no autorizado para este negocio.')
         return shop
+
+    @app.post('/api/admin/{slug}/session')
+    async def login(slug: str, body: AdminLogin, request: Request, db=Depends(session)):
+        # One worker per deployment. Bounded, in-memory throttle; no user-provided IP header is trusted.
+        key = (request.client.host if request.client else 'unknown', slug)
+        now = time.monotonic()
+        attempts = [t for t in login_attempts.get(key, []) if now-t < 900]
+        login_attempts[key] = attempts
+        login_attempts.move_to_end(key)
+        if len(login_attempts) > 2048:
+            login_attempts.popitem(last=False)
+        if len(attempts) >= 5:
+            raise HTTPException(429, 'Demasiados intentos. Espera 15 minutos antes de volver a entrar.', headers={'Retry-After':'900'})
+        shop = await db.scalar(select(Shop).where(Shop.slug == slug))
+        if not shop or not hmac.compare_digest(digest(body.key), shop.admin_hash):
+            attempts.append(now)
+            raise HTTPException(401, 'La clave no es correcta.')
+        login_attempts.pop(key, None)
+        token = secrets.token_urlsafe(48)
+        expires = datetime.now(timezone.utc) + timedelta(hours=8)
+        await db.execute(delete(AdminSession).where(AdminSession.expires_at <= datetime.now(timezone.utc)))
+        db.add(AdminSession(token_hash=digest(token), shop_id=shop.id, expires_at=expires))
+        await db.commit()
+        return JSONResponse({'token':token,'expiresAt':expires.isoformat()}, headers={'Cache-Control':'no-store'})
+
+    @app.delete('/api/admin/{slug}/session')
+    async def logout(slug: str, authorization: str | None = Header(default=None), db=Depends(session)):
+        shop = await authorized(db, slug, authorization)
+        token = authorization[7:] if authorization else ''
+        await db.execute(delete(AdminSession).where(AdminSession.token_hash == digest(token), AdminSession.shop_id == shop.id))
+        await db.commit()
+        return {'signedOut':True}
 
     def audit(db, shop, resource_id, kind, details):
         db.add(AuditEvent(id=str(uuid4()), shop_id=shop.id, resource_id=resource_id, kind=kind, details=details))
@@ -213,7 +253,7 @@ def create_app(database_url=None, secret=None, admin_token=None, seed_path=None,
         product = await db.get(Product, (shop.id, product_id))
         if not product or product.data.get('deleted'):
             raise HTTPException(404, 'Producto no encontrado.')
-        data = {**product.data, **body.model_dump(exclude={'expectedVersion'})}
+        data = {**product.data, **body.model_dump(exclude={'expectedVersion'}, exclude_unset=True)}
         if data['category'] == 'pizzas' and [v['name'] for v in data['variants']] != ['Personal', 'Grande']:
             raise HTTPException(422, 'Conserva Personal y Grande para las pizzas de dos mitades.')
         result = await db.execute(update(Product).where(Product.shop_id == shop.id, Product.id == product_id, Product.version == body.expectedVersion).values(data=data, version=Product.version+1))

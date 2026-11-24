@@ -397,3 +397,21 @@ Aclaración posterior del usuario, que prevalece sobre las notas anteriores de p
 - Waffle especial sustituido por la imagen adjunta del usuario, sin regeneración. Retirados avisos de asignación provisional de volcán y waffle.
 - Precios conservados: Volcán $120 y Waffle especial $130. Comparación verifica opciones, disponibilidad y demás productos intactos. Cuatro recursos de foto/miniatura comprobados.
 - Estados y fotos anteriores guardados en work/postres-20261112 fuera del repositorio. Instantánea pública actualizada: 79 productos y 79 fotos; sin datos privados. Publicación solicitada por el usuario.
+
+## 23 de noviembre de 2026 — Consolidación exclusiva de Pizzetas
+
+- Propietario definió Pizzetas como instalación exclusiva y carta de presentación comercial. Documentado plan de cinco etapas en PLAN_BACKEND_PIZZETAS.md, con criterios verificables y pendientes de V2.
+- Auditoría confirmó gestión existente de productos/categorías/fotos y pedidos. Detectada ausencia de administración de grupos de elección. Incorporada edición de Marca/Salsa/Sabor en el panel con guardado explícito, máximo 12 grupos y 30 valores distintos por grupo, espacios normalizados y rechazo de valores vacíos/duplicados.
+- API de alta/edición admite choices. Compatibilidad: una edición que omite choices conserva las opciones existentes; una lista vacía las retira. No se cambia esquema de base ni datos existentes al arrancar.
+- Nuevas pruebas verifican alta de producto con opciones, selección obligatoria, guardado sin opciones explícitas, retiro, conflicto de versión, rechazo de pedido con versión antigua y conservación histórica de Salsa: BBQ. Se ajustó el conteo del catálogo de pruebas para leer el seed vigente, que ya no contiene Postres de vitrina.
+- Resultado: 34 pruebas API SQLite y 30 frontend aprobadas; compilación y contenedores Docker saludables. Navegador: opciones reales de cerveza visibles, grupo adicional agregado/retirado sin guardar en la carta real. Evidencia en outputs/PANEL_OPCIONES_PIZZETAS_20261123.jpg.
+- Trabajo local: sin push, sin publicación, sin habilitar recepción de pedidos ni enviar WhatsApp. Continúan pendientes organización de carta, acceso operativo y alojamiento del piloto.
+
+## 23 de noviembre de 2026 — Preparación local de VPS IONOS
+
+- VPS del propietario temporalmente suspendido; se preparó guía de 9 etapas para el 24 de noviembre sin acciones remotas. Antes de migrar se revisarán servicios existentes, dominio y recursos reales.
+- Sesiones administrativas aleatorias persistidas por hash, 8 horas de vigencia, cierre con revocación, separación por negocio y caducidad comprobadas. Login limitado tras cinco errores; Nginx limita ráfagas. Compose de producción exige sesión y bloquea uso administrativo de clave directa; local mantiene compatibilidad para herramientas anteriores.
+- Panel actualizado: usa clave solo para entrar, conserva token de sesión en memoria y avisa al caducar. Verificado acceso a Carta y retorno al acceso tras Salir. No se cambiaron claves existentes ni configuración comercial.
+- Añadidos docker-compose.vps.yml, Caddyfile y scripts Linux de respaldo/restauración en volumen/base vacíos. Configuración Compose, validación Caddy y sintaxis bash aprobadas; emisión real de HTTPS y ejecución completa de restauración Linux pendientes del servidor.
+- 37 pruebas API SQLite y 30 frontend aprobadas, compilación y contenedores saludables. Respaldo completo previo de PostgreSQL, fotos y .env en work/preparacion-vps-20261123 (privado). Paquete de código sin secretos en outputs/PAQUETE_DESPLIEGUE_PIZZETAS.zip; no incluye este respaldo privado.
+- Sin push, sin cambios en GitHub Pages, sin activar recepción ni enviar mensajes. Reordenación avanzada de carta y detalles de impresora quedan señalados como pendientes; no se afirma que el piloto público ya esté listo.

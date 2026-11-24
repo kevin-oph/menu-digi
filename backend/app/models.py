@@ -35,6 +35,13 @@ class Product(Base):
     version: Mapped[int] = mapped_column(Integer, default=1)
 
 
+class AdminSession(Base):
+    __tablename__ = 'admin_sessions'
+    token_hash: Mapped[str] = mapped_column(String(64), primary_key=True)
+    shop_id: Mapped[str] = mapped_column(ForeignKey('shops.id'), index=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
 class Order(Base):
     __tablename__ = 'orders'
     __table_args__ = (UniqueConstraint('shop_id', 'idempotency_key', name='uq_order_attempt'),)

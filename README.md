@@ -1,6 +1,6 @@
 # Pizzetas — Menú digital y demo
 
-Estado vigente: 9 de noviembre de 2026. Carta móvil modificable, API FastAPI y PostgreSQL funcionando en Docker. No publicado en Internet; sin pagos ni mensajes reales enviados.
+Estado vigente: 23 de noviembre de 2026. Consolidación de V1 exclusiva de Pizzetas. Carta y backend completos se ejecutan localmente en Docker; la demo de GitHub Pages es una presentación independiente con pedidos simulados.
 
 ## Demo pública
 
@@ -141,3 +141,23 @@ Editar el administrador local no publica automáticamente en GitHub Pages: hay q
 La instantánea pública conserva 80 productos e incluye 78 imágenes: las 50 imágenes incorporadas localmente (39 ilustraciones y 11 fotos retocadas), junto con 28 fotografías anteriores. Las ilustraciones se identifican en la carta y el detalle del producto. Las fotos personales de pruebas siguen excluidas. La demo mantiene pedidos simulados, sin pagos, acceso administrativo ni datos privados de operación.
 
 La actualización incluye fotos ampliadas en el detalle, procedencia de imágenes y documentación del procedimiento. Se comprobaron 30 pruebas frontend y la compilación de la demo antes de publicar. Las 32 pruebas API habían pasado durante la implementación del cambio de procedencia.
+
+## Consolidación exclusiva de Pizzetas — 23 de noviembre de 2026
+
+Esta instalación es la carta de presentación comercial de Pizzetas. El objetivo es que el encargado mantenga productos, categorías, fotos, precios y opciones desde su móvil. Plan y criterios de aceptación en [docs/PLAN_BACKEND_PIZZETAS.md](docs/PLAN_BACKEND_PIZZETAS.md).
+
+Primer incremento aplicado localmente: Carta → elegir producto → «Opciones que el cliente debe elegir». Permite crear, editar y quitar grupos como Salsa, Marca o Sabor, con una alternativa por línea y guardado explícito. Cada grupo exige una elección; no cambia precios. Para precios distintos se usan presentaciones. Se rechazan grupos/valores duplicados y vacíos; los pedidos anteriores conservan sus elecciones.
+
+Validación: 34 pruebas API aisladas con SQLite, 30 frontend, compilación de producción y Docker saludables. Revisado en navegador el grupo Marca y agregar/quitar grupos sin guardar cambios en productos reales. El control de versiones protege ediciones simultáneas; omitir opciones desde una integración anterior no las elimina.
+
+Pendientes inmediatos: organización de la carta, acceso del encargado con sesión y recuperación, revisión de operación diaria y ensayo integral de WhatsApp. API/base/fotos requieren alojamiento para el piloto público. Impresora pendiente de especificaciones. Estos cambios del panel no se han publicado ni subido al repositorio en esta etapa.
+
+## Preparación del VPS — 23 de noviembre de 2026
+
+Guía paso a paso: [docs/DESPLIEGUE_IONOS.md](docs/DESPLIEGUE_IONOS.md). Configuración de servidor en docker-compose.vps.yml y deploy/Caddyfile. Scripts Linux: scripts/backup-vps.sh y scripts/restore-vps.sh; restauración solo en base/volumen vacíos. El Compose local sigue escuchando únicamente en 127.0.0.1:8080.
+
+El panel inicia una sesión aleatoria de hasta 8 horas; guarda únicamente su hash en PostgreSQL y revoca al salir. La clave se usa solo al entrar y no se conserva en almacenamiento del navegador. En producción ADMIN_REQUIRE_SESSION=true impide administrar con la clave directa. En local se conserva compatibilidad para herramientas de importación existentes. Limitación de acceso: cinco claves incorrectas por origen/negocio en 15 minutos y límite adicional Nginx. El contador de API es local al proceso, se reinicia con él y se usa un único worker; detrás del proxy puede agrupar accesos. No sustituye monitoreo ni protección distribuida.
+
+La nueva tabla admin_sessions es aditiva: el arranque la crea sin sustituir productos o pedidos. La sesión no se comparte entre negocios y persiste en servidor tras un reinicio, pero el navegador la conserva solo en memoria; recargar exige volver a entrar. Recuperación inicial: propietario con acceso SSH conserva la clave en .env/respaldo privado. No hay envío de contraseñas ni restablecimiento automático por correo.
+
+Validación actual: 37 pruebas API aisladas, 30 frontend, compilación y Docker saludables. Navegador: inicio de sesión, acceso a Carta y Salir. Configuración de VPS/HTTPS y sintaxis de scripts comprobadas localmente; DNS, certificado público y restauración Linux real se comprobarán en el servidor antes de abrir pedidos. Continúan pendientes reordenación avanzada e integración de impresora. No se ha accedido a IONOS ni publicado estos cambios.

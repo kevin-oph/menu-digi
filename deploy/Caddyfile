@@ -1,0 +1,6 @@
+{$PIZZETAS_DOMAIN} {
+    encode gzip
+    @privateDocs path /api/docs* /api/openapi.json /api/redoc*
+    respond @privateDocs 404
+    reverse_proxy frontend:8080
+}
